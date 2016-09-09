@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>.: Library v2.0 :.</title>
+    <title><?php echo L::titles_page_title; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="res/bootstrap3/css/bootstrap.css" rel="stylesheet">
@@ -36,35 +36,35 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only"><?php echo L::navbar_toggle_nav; ?></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./">Library <sup><small><span class="label label-info">v2.0</span></small></sup> </a>
+          <a class="navbar-brand" href="./"><?php echo L::titles_page_title; ?></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-<?php 
+<?php
 $u=null;
 if(Session::getUID()!=""):
   $u = UserData::getById(Session::getUID());
 ?>
          <ul class="nav navbar-nav">
-          </ul> 
+          </ul>
           <ul class="nav navbar-nav side-nav">
-          <li><a href="index.php?view=home"><i class="fa fa-home"></i> Inicio</a></li>
-          <li><a href="index.php?view=rent"><i class="fa fa-cube"></i> Prestamo</a></li>
-          <li><a href="index.php?view=rents"><i class="fa fa-th-large"></i> Prestamos</a></li>
-          <li><a href="index.php?view=books"><i class="fa fa-book"></i> Libros</a></li>
-          <li><a href="index.php?view=clients"><i class="fa fa-male"></i> Clientes</a></li>
-          <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> Categorias</a></li>
-          <li><a href="index.php?view=editorials"><i class="fa fa-th-list"></i> Editoriales</a></li>
-          <li><a href="index.php?view=authors"><i class="fa fa-th-list"></i> Autores</a></li>
+          <li><a href="index.php?view=home"><i class="fa fa-home"></i> <?php echo L::navbar_home; ?></a></li>
+          <li><a href="index.php?view=rent"><i class="fa fa-cube"></i> <?php echo L::navbar_loan; ?></a></li>
+          <li><a href="index.php?view=rents"><i class="fa fa-th-large"></i> <?php echo L::navbar_loans; ?></a></li>
+          <li><a href="index.php?view=books"><i class="fa fa-book"></i> <?php echo L::navbar_books; ?></a></li>
+          <li><a href="index.php?view=clients"><i class="fa fa-male"></i> <?php echo L::navbar_clients; ?></a></li>
+          <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> <?php echo L::navbar_categories; ?></a></li>
+          <li><a href="index.php?view=editorials"><i class="fa fa-th-list"></i> <?php echo L::navbar_publishers; ?></a></li>
+          <li><a href="index.php?view=authors"><i class="fa fa-th-list"></i> <?php echo L::navbar_authors; ?></a></li>
           <?php if($u->is_admin):?>
-          <li><a href="index.php?view=reports"><i class="fa fa-area-chart"></i> Reportes</a></li>
-          <li><a href="index.php?view=users"><i class="fa fa-users"></i> Usuarios </a></li>
+          <li><a href="index.php?view=reports"><i class="fa fa-area-chart"></i> <?php echo L::navbar_relatories; ?></a></li>
+          <li><a href="index.php?view=users"><i class="fa fa-users"></i> <?php echo L::navbar_users; ?> </a></li>
         <?php endif;?>
           </ul>
 
@@ -76,7 +76,7 @@ if(Session::getUID()!=""):
 
 
 <?php if(Session::getUID()!=""):?>
-<?php 
+<?php
 $u=null;
 if(Session::getUID()!=""){
   $u = UserData::getById(Session::getUID());
@@ -89,9 +89,9 @@ if(Session::getUID()!=""){
         <b><u>EVILNΛPSIS</u></b> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a target="_blank" href="http://evilnapsis.com/">Sitio Web</a></li>
-          <li><a target="_blank" href="http://evilnapsis.com/2015/05/16/sistema-bibliotecario-library/">Acerca de <b>Library</b></a></li>
-          <li><a target="_blank" href="http://evilnapsis.com/store/">Tienda de aplicaciones</a></li>
+          <li><a target="_blank" href="http://evilnapsis.com/"><?php echo L::evilnapsis_website; ?></a></li>
+          <li><a target="_blank" href="http://evilnapsis.com/2015/05/16/sistema-bibliotecario-library/"><?php echo L::evilnapsis_about_library; ?></a></li>
+          <li><a target="_blank" href="http://evilnapsis.com/store/"><?php echo L::evilnapsis_appstore; ?></a></li>
         </ul>
         </li>
 
@@ -100,8 +100,8 @@ if(Session::getUID()!=""){
         <?php echo $user; ?> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="index.php?view=configuration">Configuracion</a></li>
-          <li><a href="logout.php">Salir</a></li>
+          <li><a href="index.php?view=configuration"><?php echo L::navbar_config; ?></a></li>
+          <li><a href="logout.php"><?php echo L::navbar_exit; ?></a></li>
         </ul>
         </li>
         </ul>
@@ -117,7 +117,7 @@ if(Session::getUID()!=""){
 
       <div id="page-wrapper">
 
-<?php 
+<?php
   // puedo cargar otras funciones iniciales
   // dentro de la funcion donde cargo la vista actual
   // como por ejemplo cargar el corte actual

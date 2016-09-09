@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=newclient" class="btn btn-default"><i class='fa fa-male'></i> Nuevo Cliente</a>
+	<a href="index.php?view=newclient" class="btn btn-default"><i class='fa fa-male'></i> <?php echo L::buttons_new_client; ?></a>
 <!--<div class="btn-group pull-right">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
@@ -12,7 +12,7 @@
 </div>
 -->
 </div>
-		<h1>Clientes</h1>
+		<h1><?php echo L::titles_clients; ?></h1>
 <br>
 		<?php
 
@@ -23,10 +23,10 @@
 
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Nombre completo</th>
-			<th>Direccion</th>
-			<th>Email</th>
-			<th>Telefono</th>
+			<th><?php echo L::fields_full_name; ?></th>
+			<th><?php echo L::fields_address; ?></th>
+			<th><?php echo L::fields_email; ?></th>
+			<th><?php echo L::phone ?></th>
 			<th></th>
 			</thead>
 			<?php
@@ -38,9 +38,9 @@
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
 				<td style="width:200px;">
-				<a href="index.php?view=clienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
-				<a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?action=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?view=clienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a>
+				<a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a>
+				<a href="index.php?action=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a>
 				</td>
 				</tr>
 				<?php
@@ -52,7 +52,7 @@
 
 
 		}else{
-			echo "<p class='alert alert-danger'>No hay Clientes</p>";
+			echo "<p class='alert alert-danger'>" . L::messages_no_clients . "</p>";
 		}
 
 

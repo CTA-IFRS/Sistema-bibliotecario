@@ -8,40 +8,40 @@ $editorials = EditorialData::getAll();
 
 <div class="row">
 <div class="col-md-12">
-<h1><?php echo $book->title; ?> <small>Editar libro</small></h1>
+<h1><?php echo $book->title; ?> <small><?php echo L::titles_edit_book; ?></small></h1>
 <form class="form-horizontal" role="form" method="post" action="./?action=updatebook" id="addbook">
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">ISBN</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_isbn; ?></label>
     <div class="col-lg-10">
-      <input type="text" name="isbn" class="form-control" value="<?php echo $book->isbn; ?>" id="inputEmail1" placeholder="ISBN">
+      <input type="text" name="isbn" class="form-control" value="<?php echo $book->isbn; ?>" id="inputEmail1" placeholder="<?php echo L::fields_isbn; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Titulo</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_title; ?></label>
     <div class="col-lg-10">
-      <input type="text" name="title" required class="form-control" value="<?php echo $book->title; ?>" id="inputEmail1" placeholder="Titulo">
+      <input type="text" name="title" required class="form-control" value="<?php echo $book->title; ?>" id="inputEmail1" placeholder="<?php echo L::fields_title; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Subtitulo</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_subtitle; ?></label>
     <div class="col-lg-10">
-      <input type="text" name="subtitle" class="form-control" value="<?php echo $book->subtitle; ?>" id="inputEmail1" placeholder="Subtitulo">
+      <input type="text" name="subtitle" class="form-control" value="<?php echo $book->subtitle; ?>" id="inputEmail1" placeholder="<?php echo L::fields_subtitle; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Descripcion</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_description; ?></label>
     <div class="col-lg-10">
-    <textarea class="form-control" name="description" placeholder="Descripcion"><?php echo $book->description; ?></textarea>
+    <textarea class="form-control" name="description" placeholder="<?php echo L::fields_description; ?>"><?php echo $book->description; ?></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Num. Paginas</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_page_number; ?></label>
     <div class="col-lg-4">
-      <input type="text" name="n_pag" class="form-control" id="inputEmail1" value="<?php echo $book->n_pag; ?>" placeholder="Num. Paginas">
+      <input type="text" name="n_pag" class="form-control" id="inputEmail1" value="<?php echo $book->n_pag; ?>" placeholder="<?php echo L::fields_page_number; ?>">
     </div>
-    <label for="inputEmail1" class="col-lg-2 control-label">A&ntilde;o</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_year; ?></label>
     <div class="col-lg-4">
-      <input type="text" name="year" class="form-control" id="inputEmail1" value="<?php echo $book->year; ?>" placeholder="A&ntilde;o">
+      <input type="text" name="year" class="form-control" id="inputEmail1" value="<?php echo $book->year; ?>" placeholder="<?php echo L::fields_year; ?>">
     </div>
 
   </div>
@@ -49,10 +49,10 @@ $editorials = EditorialData::getAll();
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Categoria</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_category; ?></label>
     <div class="col-lg-10">
 <select name="category_id" class="form-control">
-<option value="">-- SELECCIONE --</option>
+<option value=""><?php echo L::fields_select; ?></option>
   <?php foreach($categories as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($book->category_id!=null && $book->category_id==$p->id){ echo "selected"; }?>><?php echo $p->name; ?></option>
   <?php endforeach; ?>
@@ -60,10 +60,10 @@ $editorials = EditorialData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Editorial</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_publisher; ?></label>
     <div class="col-lg-10">
 <select name="editorial_id" class="form-control">
-<option value="">-- SELECCIONE --</option>
+<option value=""><?php echo L::fields_select; ?></option>
   <?php foreach($editorials as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($book->editorial_id!=null && $book->editorial_id==$p->id){ echo "selected"; }?>><?php echo $p->name; ?></option>
   <?php endforeach; ?>
@@ -71,10 +71,10 @@ $editorials = EditorialData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Autor</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_author; ?></label>
     <div class="col-lg-10">
 <select name="author_id" class="form-control">
-<option value="">-- SELECCIONE --</option>
+<option value=""><?php echo L::fields_select; ?></option>
   <?php foreach($authors as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($book->author_id!=null && $book->author_id==$p->id){ echo "selected"; }?>><?php echo $p->name." ".$p->lastname; ?></option>
   <?php endforeach; ?>
@@ -90,8 +90,8 @@ $editorials = EditorialData::getAll();
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="id" value="<?php echo $book->id; ?>">
-      <button type="submit" class="btn btn-success">Actualizar Libro</button>
-      <button type="reset" class="btn btn-default" id="clear">Limpiar Campos</button>
+      <button type="submit" class="btn btn-success"><?php L::buttons_add_book; ?></button>
+      <button type="reset" class="btn btn-default" id="clear"><?php L::buttons_clean_fields; ?></button>
     </div>
   </div>
 </form>

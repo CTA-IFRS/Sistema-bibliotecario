@@ -3,8 +3,8 @@
 * @brief Modelo de base de datos
 * @date 2015-10-24
 **/
-create database library2;
-use library2; 
+create database library;
+use library;
 
 create table user (
 	id int not null auto_increment primary key,
@@ -18,7 +18,7 @@ create table user (
 	created_at datetime not null
 );
 
-insert into user (name,username,password,is_active,is_admin,created_at) value ("Administrador","admin",sha1(md5("admin")),1,1,NOW());
+insert into user (name,lastname,username,email,password,is_active,is_admin,created_at) value ("Administrador","do Sistema","admin","your@email.com",sha1(md5("admin")),1,1,NOW());
 
 create table client (
 	id int not null auto_increment primary key,

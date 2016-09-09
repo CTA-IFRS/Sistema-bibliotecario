@@ -1,24 +1,24 @@
 <div class="row">
 	<div class="col-md-12">
-<h1>Reportes</h1>
+<h1><?php echo L::titles_reports; ?></h1>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="reports">
   <div class="form-group">
     <div class="col-lg-3">
 		<div class="input-group">
-		  <span class="input-group-addon">INICIO</span>
-		  <input type="date" name="start_at" value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="Palabra clave">
+		  <span class="input-group-addon"><?php echo L::fields_start; ?></span>
+		  <input type="date" name="start_at" value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
 		</div>
     </div>
     <div class="col-lg-3">
 		<div class="input-group">
-		  <span class="input-group-addon">FIN</span>
-		  <input type="date" name="finish_at" value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="Palabra clave">
+		  <span class="input-group-addon"><?php echo L::fields_end; ?></span>
+		  <input type="date" name="finish_at" value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
 		</div>
     </div>
     <div class="col-lg-6">
-    <button class="btn btn-primary btn-block">Procesar</button>
+    <button class="btn btn-primary btn-block"><?php echo L::buttons_execute; ?></button>
     </div>
 
   </div>
@@ -32,13 +32,13 @@ if(isset($_GET["start_at"]) && $_GET["start_at"]!="" && isset($_GET["finish_at"]
 			?>
 			<div class="panel panel-default">
 			<div class="panel-heading">
-			Reportes</div>
+			<?php echo L::fields_reports; ?></div>
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Ejemplar</th>
-			<th>Titulo</th>
-			<th>Cliente</th>
-			<th>Fecha</th>
+			<th><?php echo L::fields_copy; ?></th>
+			<th><?php echo L::fields_title; ?></th>
+			<th><?php echo L::fields_client; ?></th>
+			<th><?php echo L::fields_date; ?></th>
 			</thead>
 			<?php
 			$total = 0;
@@ -60,10 +60,10 @@ if(isset($_GET["start_at"]) && $_GET["start_at"]!="" && isset($_GET["finish_at"]
 			?>
 			<?php
 		}else{
-			echo "<p class='alert alert-danger'>No hay datos.</p>";
+			echo "<p class='alert alert-danger'>" . L::messages_no_data; . "</p>";
 		}
 		}else{
-			echo "<p class='alert alert-danger'>Debes seleccionar un rango de fechas.</p>";
+			echo "<p class='alert alert-danger'>" . L::messages_must_select_date_range; . "</p>";
 		}
 
 

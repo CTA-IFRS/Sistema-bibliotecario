@@ -1,50 +1,50 @@
 <?php $user = UserData::getById($_GET["id"]);?>
 <div class="row">
 	<div class="col-md-12">
-	<h1>Editar Usuario</h1>
+	<h1><?php echo L::titles_edit_user; ?></h1>
 	<br>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=updateuser" role="form">
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> *</label>
     <div class="col-md-6">
-      <input type="text" name="name" value="<?php echo $user->name;?>" required class="form-control" id="name" placeholder="Nombre">
+      <input type="text" name="name" value="<?php echo $user->name;?>" required class="form-control" id="name" placeholder="<?php echo L::fields_name; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> *</label>
     <div class="col-md-6">
-      <input type="text" name="lastname" value="<?php echo $user->lastname;?>"  class="form-control" id="lastname" placeholder="Apellido">
+      <input type="text" name="lastname" value="<?php echo $user->lastname;?>"  class="form-control" id="lastname" placeholder="<?php echo L::fields_lastname; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_username; ?> *</label>
     <div class="col-md-6">
-      <input type="text" name="username" value="<?php echo $user->username;?>" class="form-control" required id="username" placeholder="Nombre de usuario">
+      <input type="text" name="username" value="<?php echo $user->username;?>" class="form-control" required id="username" placeholder="<?php echo L::fields_username; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email ?> *</label>
     <div class="col-md-6">
-      <input type="text" name="email" value="<?php echo $user->email;?>" class="form-control" id="email" placeholder="Email">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Contrase&ntilde;a</label>
-    <div class="col-md-6">
-      <input type="password" name="password" class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
-<p class="help-block">La contrase&ntilde;a solo se modificara si escribes algo, en caso contrario no se modifica.</p>
+      <input type="text" name="email" value="<?php echo $user->email;?>" class="form-control" id="email" placeholder="<?php echo L::fields_email; ?>">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label" >Esta activo</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_password; ?></label>
+    <div class="col-md-6">
+      <input type="password" name="password" class="form-control" id="inputEmail1" placeholder="<?php echo L::fields_password; ?>">
+	  <p class="help-block"><?php echo L::messages_password_only_updated_if_field; ?></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label" ><?php echo L::fields_is_active; ?></label>
     <div class="col-md-6">
 <div class="checkbox">
     <label>
-      <input type="checkbox" name="is_active" <?php if($user->is_active){ echo "checked";}?>> 
+      <input type="checkbox" name="is_active" <?php if($user->is_active){ echo "checked";}?>>
     </label>
   </div>
     </div>
@@ -52,22 +52,22 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label" >Es administrador</label>
+    <label for="inputEmail1" class="col-lg-2 control-label" ><?php echo L::fields_is_admin; ?></label>
     <div class="col-md-6">
 <div class="checkbox">
     <label>
-      <input type="checkbox" name="is_admin" <?php if($user->is_admin){ echo "checked";}?>> 
+      <input type="checkbox" name="is_admin" <?php if($user->is_admin){ echo "checked";}?>>
     </label>
   </div>
     </div>
   </div>
 
-  <p class="alert alert-info">* Campos obligatorios</p>
+  <p class="alert alert-info">* <?php echo L::messages_mandatory_fields; ?></p>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="user_id" value="<?php echo $user->id;?>">
-      <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+      <button type="submit" class="btn btn-primary"><?php echo L::buttons_update_user; ?></button>
     </div>
   </div>
 </form>
