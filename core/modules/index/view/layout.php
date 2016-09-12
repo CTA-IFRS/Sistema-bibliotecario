@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title><?php echo L::titles_page_title; ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="res/bootstrap3/css/bootstrap.css" rel="stylesheet">
+    <link href="vendor/bootstrap3/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="res/select2/select2.css" rel="stylesheet">
-    <link href="res/select2/select2-bootstrap.css" rel="stylesheet">
+    <link href="vendor/select2/select2.css" rel="stylesheet">
+    <link href="vendor/select2/select2-bootstrap.css" rel="stylesheet">
 
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <script src="js/jquery-1.10.2.js"></script>
-<?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
-<link href='res/fullcalendar.min.css' rel='stylesheet' />
-<link href='res/fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='res/js/moment.min.js'></script>
-<script src='res/fullcalendar.min.js'></script>
-<?php endif; ?>
-<script src='res/select2/select2.min.js'></script>
+    <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
+    <link href='vendor/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+    <link href='vendor/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <script src='vendor/js/moment-with-locales.js'></script>
+    <script src='vendor/fullcalendar/fullcalendar.min.js'></script>
+    <script src="vendor/fullcalendar/locale-all.js" charset="utf-8"></script>
+
+    </script>
+    <?php endif; ?>
+    <script src='vendor/select2/select2.min.js'></script>
 
   </head>
 
@@ -133,7 +134,7 @@ if(Session::getUID()!=""){
 
     <!-- JavaScript -->
 
-<script src="res/bootstrap3/js/bootstrap.min.js"></script>
+<script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
 <script>
 </script>
   </body>

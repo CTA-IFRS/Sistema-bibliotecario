@@ -13,8 +13,6 @@ foreach($events as $event){
 
 ?>
 <script>
-
-
 	$(document).ready(function() {
 
 		$('#calendar').fullCalendar({
@@ -23,6 +21,7 @@ foreach($events as $event){
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay'
 			},
+			locale: 'pt-br',
 			defaultDate: '<?php echo date("Y-m-d");?>',
 			editable: false,
 			eventLimit: true, // allow "more" link when too many events
