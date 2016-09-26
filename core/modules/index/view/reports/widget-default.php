@@ -60,10 +60,10 @@ if(isset($_GET["start_at"]) && $_GET["start_at"]!="" && isset($_GET["finish_at"]
 			?>
 			<?php
 		}else{
-			echo "<p class='alert alert-danger'>" . L::messages_no_data; . "</p>";
+			echo "<p class='alert alert-danger'>" . L::messages_no_data . "</p>";
 		}
 		}else{
-			echo "<p class='alert alert-danger'>" . L::messages_must_select_date_range; . "</p>";
+			echo "<p class='alert alert-danger'>" . L::messages_must_select_date_range . "</p>";
 		}
 
 
