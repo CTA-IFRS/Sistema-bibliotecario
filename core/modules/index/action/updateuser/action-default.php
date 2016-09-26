@@ -17,7 +17,7 @@ if(count($_POST)>0){
 	if($_POST["password"]!=""){
 		$user->password = sha1(md5($_POST["password"]));
 		$user->update_passwd();
-print "<script>alert('Se ha actualizado el password');</script>";
+print "<script>alert('" . L::messages_has_updated_password . "');</script>";
 
 	}
 
