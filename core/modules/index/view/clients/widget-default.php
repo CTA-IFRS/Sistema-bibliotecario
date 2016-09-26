@@ -26,7 +26,7 @@
 			<th><?php echo L::fields_full_name; ?></th>
 			<th><?php echo L::fields_address; ?></th>
 			<th><?php echo L::fields_email; ?></th>
-			<th><?php echo L::phone ?></th>
+			<th><?php echo L::fields_phone; ?></th>
 			<th></th>
 			</thead>
 			<?php
