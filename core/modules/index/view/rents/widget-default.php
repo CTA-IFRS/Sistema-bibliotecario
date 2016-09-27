@@ -1,24 +1,24 @@
 <div class="row">
 	<div class="col-md-12">
-		<h1><i class='fa fa-th-large'></i> Prestamos</h1>
+		<h1><i class='fa fa-th-large'></i> <?php echo L::titles_loans; ?></h1>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="rents">
   <div class="form-group">
     <div class="col-lg-3">
 		<div class="input-group">
-		  <span class="input-group-addon">INICIO</span>
-		  <input type="date" name="start_at" required value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="Palabra clave">
+		  <span class="input-group-addon"><?php echo L::fields_start; ?></span>
+		  <input type="date" name="start_at" required value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
 		</div>
     </div>
     <div class="col-lg-3">
 		<div class="input-group">
-		  <span class="input-group-addon">FIN</span>
-		  <input type="date" name="finish_at" required value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="Palabra clave">
+		  <span class="input-group-addon"><?php echo L::fields_end; ?></span>
+		  <input type="date" name="finish_at" required value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
 		</div>
     </div>
     <div class="col-lg-6">
-    <button class="btn btn-primary btn-block">Procesar</button>
+    <button class="btn btn-primary btn-block"><?php echo L::buttons_execute; ?></button>
     </div>
 
   </div>
@@ -38,11 +38,11 @@ if(count($products)>0){
 <br>
 <table class="table table-bordered table-hover	">
 	<thead>
-		<th>Ejemplar</th>
-		<th>Libro</th>
-		<th>Cliente</th>
-		<th>Inicio</th>
-		<th>Fin</th>
+		<th><?php echo L::fields_copy; ?></th>
+		<th><?php echo L::fields_book; ?></th>
+		<th><?php echo L::fields_client; ?></th>
+		<th><?php echo L::fields_start; ?></th>
+		<th><?php echo L::fields_end; ?></th>
 		<th></th>
 		<th></th>
 	</thead>
@@ -65,7 +65,7 @@ $client = $sell->getClient();
 		<td><?php echo $sell->finish_at; ?></td>
 		<td style="width:60px;">
 		<?php if($sell->returned_at==""):?>
-		<a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-success">Finalizar</a>
+		<a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-success"><?php echo L::buttons_finish; ?></a>
 	<?php endif;?>
 		</td>
 		<td style="width:30px;"><a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
@@ -78,7 +78,7 @@ $client = $sell->getClient();
 	<?php
 }else{
 	?>
-	<p class="alert alert-danger">No hay prestamos.</p>
+	<p class="alert alert-danger"><?php echo L::messages_no_loan; ?></p>
 	<?php
 }
 

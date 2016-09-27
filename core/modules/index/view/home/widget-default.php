@@ -13,8 +13,6 @@ foreach($events as $event){
 
 ?>
 <script>
-
-
 	$(document).ready(function() {
 
 		$('#calendar').fullCalendar({
@@ -23,12 +21,13 @@ foreach($events as $event){
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay'
 			},
+			locale: 'pt-br',
 			defaultDate: '<?php echo date("Y-m-d");?>',
 			editable: false,
 			eventLimit: true, // allow "more" link when too many events
 			events: <?php echo json_encode($thejson); ?>
 		});
-		
+
 	});
 
 </script>
@@ -36,7 +35,7 @@ foreach($events as $event){
 
 <div class="row">
 <div class="col-md-12">
-<h1>Calendario</h1>
+<h1><?php L::titles_calendar; ?></h1>
 <div id="calendar"></div>
 
 </div>

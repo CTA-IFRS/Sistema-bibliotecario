@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
-	<a href="index.php?view=newuser" class="btn btn-default pull-right"><i class='glyphicon glyphicon-user'></i> Nuevo Usuario</a>
-		<h1>Lista de Usuarios</h1>
+	<a href="index.php?view=newuser" class="btn btn-default pull-right"><i class='glyphicon glyphicon-user'></i> <?php echo L::buttons_new_user; ?></a>
+		<h1><?php echo L::titles_users_list; ?></h1>
 <br>
 		<?php
 		/*
@@ -27,10 +27,10 @@
 			?>
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Nombre completo</th>
-			<th>Nombre de usuario</th>
-			<th>Activo</th>
-			<th>Admin</th>
+			<th><?php echo L::fields_full_name; ?></th>
+			<th><?php echo L::fields_username; ?></th>
+			<th><?php echo L::fields_is_active; ?></th>
+			<th><?php echo L::fields_is_admin; ?></th>
 			<th></th>
 			</thead>
 			<?php
@@ -49,7 +49,7 @@
 						<i class="glyphicon glyphicon-ok"></i>
 					<?php endif; ?>
 				</td>
-				<td style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a></td>
+				<td style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php L::buttons_edit; ?></a></td>
 				</tr>
 				<?php
 

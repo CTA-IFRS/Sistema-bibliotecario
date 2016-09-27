@@ -3,8 +3,8 @@
 ?>
 <div class="row">
 	<div class="col-md-12">
-	<h1>Prestamo</h1>
-	<p><b>Buscar libro por titulo o por codigo/isbn:</b></p>
+	<h1><?php echo L::titles_loan; ?></h1>
+	<p><b><?php echo L::messages_search_book_by_code_isbn; ?></b></p>
 		<form id="searchp">
 		<div class="row">
 			<div class="col-md-6">
@@ -12,7 +12,7 @@
 				<input type="text" id="product_code" name="product" class="form-control">
 			</div>
 			<div class="col-md-3">
-			<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Buscar</button>
+			<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> <?php echo L::buttons_search; ?></button>
 			</div>
 		</div>
 		</form>
@@ -24,7 +24,7 @@
 $(document).ready(function(){
 	$("#searchp").on("submit",function(e){
 		e.preventDefault();
-		
+
 		$.get("./?action=searchbook",$("#searchp").serialize(),function(data){
 			$("#show_search_results").html(data);
 		});
@@ -42,15 +42,15 @@ $total = 0;
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<h2>Lista de venta</h2>
+<h2><?php echo L::titles_sell_list; ?></h2>
 
 <form class="form-horizontal" role="form" method="post" action="./?action=process">
   <div class="form-group">
 
     <div class="col-lg-3">
-    <label class="control-label">Cliente</label>
+    <label class="control-label"><?php echo L::fields_client; ?></label>
 <select name="client_id" required class="form-control">
-<option value="">-- SELECCIONE --</option>
+<option value=""><?php echo L::fields_select; ?></option>
   <?php foreach(ClientData::getAll() as $p):?>
     <option value="<?php echo $p->id; ?>"><?php echo $p->name." ".$p->lastname; ?></option>
   <?php endforeach; ?>
@@ -58,16 +58,16 @@ $total = 0;
     </div>
 
     <div class="col-lg-3">
-    <label class="control-label">Inicio</label>
-      <input type="date" name="start_at" required class="form-control" placeholder="Email">
+    <label class="control-label"><?php echo L::fields_start; ?></label>
+      <input type="date" name="start_at" required class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
     </div>
     <div class="col-lg-3">
-    <label class="control-label">Fin</label>
-      <input type="date" name="finish_at" required class="form-control" placeholder="Email">
+    <label class="control-label"><?php echo L::fields_end; ?></label>
+      <input type="date" name="finish_at" required class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
     </div>
     <div class="col-lg-2">
     <label class="control-label"><br></label>
-      <input type="submit" value="Procesar" class="btn btn-primary btn-block" placeholder="Email">
+      <input type="submit" value="<?php echo L::fields_execute; ?>" class="btn btn-primary btn-block">
     </div>
     <div class="col-lg-1">
     <label class="control-label"><br></label>
@@ -78,9 +78,9 @@ $total = 0;
 </form>
 <table class="table table-bordered table-hover">
 <thead>
-	<th style="width:40px;">Codigo</th>
-	<th style="width:40px;">Ejemplar</th>
-	<th>Titulo</th>
+	<th style="width:40px;"><?php echo L::fields_code; ?></th>
+	<th style="width:40px;"><?php echo L::fields_copy; ?></th>
+	<th><?php echo L::fields_title; ?></th>
 	<th></th>
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
@@ -93,7 +93,7 @@ $item = ItemData::getById($p["item_id"]);
 	<td ><?php echo $item->code; ?></td>
 	<td ><?php echo $book->title; ?></td>
 	<td style="width:30px;">
-	<a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+	<a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?></a>
 	</td>
 </tr>
 

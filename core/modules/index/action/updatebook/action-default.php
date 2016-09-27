@@ -14,7 +14,7 @@ $r->author_id = $_POST["author_id"]!="" ? $_POST["author_id"] : "NULL";
 $r->update();
 
 
-Core::alert("Actualizado exitosamente!");
+Core::alert(L::messages_updated_with_success);
 print "<script>window.location='./index.php?view=books';</script>";
 
 }

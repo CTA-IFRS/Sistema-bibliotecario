@@ -4,9 +4,9 @@ $book = BookData::getById($_GET["id"]);
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=newitem&book_id=<?php echo $book->id; ?>" class="btn btn-default"><i class='fa fa-th-list'></i> Nuevo Ejemplar</a>
+	<a href="index.php?view=newitem&book_id=<?php echo $book->id; ?>" class="btn btn-default"><i class='fa fa-th-list'></i> <?php echo L::buttons_new_copie; ?></a>
 </div>
-		<h1><?php echo $book->title;?> <small>Ejemplares</small></h1>
+		<h1><?php echo $book->title;?> <small><?php echo L::fields_copies; ?></small></h1>
 <br>
 		<?php
 
@@ -17,8 +17,8 @@ $book = BookData::getById($_GET["id"]);
 
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Codigo</th>
-			<th>Estado</th>
+			<th><?php echo L::fields_code; ?></th>
+			<th><?php echo L::fields_state; ?></th>
 			<th></th>
 			</thead>
 			<?php
@@ -28,8 +28,8 @@ $book = BookData::getById($_GET["id"]);
 				<td><?php echo $user->code; ?></td>
 				<td><?php echo $user->getStatus()->name; ?></td>
 				<td style="width:200px;">
-								<a href="index.php?view=itemhistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
-<a href="index.php?view=edititem&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?action=delitem&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+								<a href="index.php?view=itemhistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a>
+<a href="index.php?view=edititem&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?action=delitem&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
 				</tr>
 				<?php
 
@@ -38,7 +38,7 @@ $book = BookData::getById($_GET["id"]);
 			</table>
 			<?php
 		}else{
-			echo "<p class='alert alert-danger'>No hay Ejemlpares</p>";
+			echo "<p class='alert alert-danger'>". L::messages_no_copies . "</p>";
 		}
 
 

@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=newcategory" class="btn btn-default"><i class='fa fa-th-list'></i> Nueva Categoria</a>
+	<a href="index.php?view=newcategory" class="btn btn-default"><i class='fa fa-th-list'></i> <?php echo L::buttons_new_category; ?></a>
 </div>
-		<h1>Categorias</h1>
+		<h1><?php echo L::titles_categories; ?></h1>
 <br>
 		<?php
 
@@ -14,7 +14,7 @@
 
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Nombre</th>
+			<th><?php echo L::fields_name; ?></th>
 			<th></th>
 			</thead>
 			<?php
@@ -22,7 +22,7 @@
 				?>
 				<tr>
 				<td><?php echo $user->name; ?></td>
-				<td style="width:130px;"><a href="index.php?view=editcategory&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?action=delcategory&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+				<td style="width:130px;"><a href="index.php?view=editcategory&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a> <a href="index.php?action=delcategory&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
 				</tr>
 				<?php
 
@@ -31,7 +31,7 @@
 			</table>
 			<?php
 		}else{
-			echo "<p class='alert alert-danger'>No hay Categorias</p>";
+			echo "<p class='alert alert-danger'>" . L::messages_no_categories . "</p>";
 		}
 
 

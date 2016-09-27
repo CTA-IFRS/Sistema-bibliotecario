@@ -1,0 +1,3 @@
+[submodule "vendor/php-i18n"]
+	path = vendor/php-i18n
+	url = https://github.com/Philipp15b/php-i18n

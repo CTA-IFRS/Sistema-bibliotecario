@@ -3,7 +3,7 @@ class Database {
 	public static $db;
 	public static $con;
 	function Database(){
-		$this->user="root";$this->pass="";$this->host="localhost";$this->ddbb="library2";
+		$this->user="root";$this->pass="123";$this->host="localhost";$this->ddbb="library";
 	}
 
 	function connect(){
@@ -18,6 +18,6 @@ class Database {
 		}
 		return self::$con;
 	}
-	
+
 }
 ?>
