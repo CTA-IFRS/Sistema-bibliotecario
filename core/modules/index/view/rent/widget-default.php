@@ -67,7 +67,7 @@ $total = 0;
     </div>
     <div class="col-lg-2">
     <label class="control-label"><br></label>
-      <input type="submit" value="<?php echo L::fields_execute; ?>" class="btn btn-primary btn-block">
+      <input type="submit" value="<?php echo L::buttons_execute; ?>" class="btn btn-primary btn-block">
     </div>
     <div class="col-lg-1">
     <label class="control-label"><br></label>
@@ -79,7 +79,7 @@ $total = 0;
 <table class="table table-bordered table-hover">
 <thead>
 	<th style="width:40px;"><?php echo L::fields_code; ?></th>
-	<th style="width:40px;"><?php echo L::fields_copy; ?></th>
+	<th style="width:40px;"><?php echo L::fields_copie; ?></th>
 	<th><?php echo L::fields_title; ?></th>
 	<th></th>
 </thead>

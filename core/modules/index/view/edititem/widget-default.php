@@ -32,7 +32,7 @@ $book = BookData::getById($item->book_id); ?>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="item_id" value="<?php echo $item->id; ?>">
-      <button type="submit" class="btn btn-success"><?php echo L::update_copie; ?></button>
+      <button type="submit" class="btn btn-success"><?php echo L::buttons_update_copie; ?></button>
     </div>
   </div>
 </form>
