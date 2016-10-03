@@ -9,8 +9,7 @@ class Executor {
 
 		if (!$return = $con->query($sql))
 		{
-			echo '<script>alert("olá");</script>';
-			printf("Errormessage: %s\n", $con->error);
+			printf("MySQL Error: %s\n", $con->error);
 			die;
 		}
 		return array($return, $con->insert_id);

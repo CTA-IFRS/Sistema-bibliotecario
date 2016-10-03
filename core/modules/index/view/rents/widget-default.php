@@ -38,7 +38,7 @@ if(count($products)>0){
 <br>
 <table class="table table-bordered table-hover	">
 	<thead>
-		<th><?php echo L::fields_copy; ?></th>
+		<th><?php echo L::fields_copie; ?></th>
 		<th><?php echo L::fields_book; ?></th>
 		<th><?php echo L::fields_client; ?></th>
 		<th><?php echo L::fields_start; ?></th>
