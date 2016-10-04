@@ -4,11 +4,10 @@ class ItemData {
 
 
 	public function ItemData(){
-		$this->name = "";
-		$this->lastname = "";
-		$this->email = "";
-		$this->password = "";
-		$this->created_at = "NOW()";
+		$this->book_id = "";
+		$this->tatus_id = "";
+		$this->code = "";
+		$this->id = "";
 	}
 
 	public function getBook(){ return BookData::getById($this->book_id); }
@@ -68,7 +67,7 @@ class ItemData {
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ItemData());
 	}
-	
+
 	public static function getAllByBookId($id){
 		$sql = "select * from ".self::$tablename." where book_id=$id";
 		$query = Executor::doit($sql);

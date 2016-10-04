@@ -4,11 +4,14 @@ class OperationData {
 
 
 	public function OperationData(){
-		$this->name = "";
-		$this->lastname = "";
-		$this->email = "";
-		$this->password = "";
-		$this->created_at = "NOW()";
+		$this->item_id = "";
+		$this->client_id = "";
+		$this->start_at = "";
+		$this->finish_at = "";
+		$this->returned_at = NULL;
+		$this->user_id = "";
+		$this->receptor_id = NULL;
+
 	}
 
 	public function getItem(){ return ItemData::getById($this->item_id); }
@@ -93,7 +96,7 @@ class OperationData {
 		return Model::many($query[0],new OperationData());
 	}
 
-	
+
 	public static function getLike($q){
 		$sql = "select * from ".self::$tablename." where name like '%$q%'";
 		$query = Executor::doit($sql);
