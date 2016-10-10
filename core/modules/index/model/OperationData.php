@@ -17,7 +17,36 @@ class OperationData {
 	public function getItem(){ return ItemData::getById($this->item_id); }
 	public function getClient(){ return ClientData::getById($this->client_id); }
 
+	public function convertDateTypesToDB($start = false,$finish = false){
+		$this->start_at = DateTime::createFromFormat('d/m/Y', $this->start_at);
+		$this->finish_at = DateTime::createFromFormat('d/m/Y', $this->finish_at);
+
+		$this->start_at = $this->start_at->format('m/d/Y');
+		$this->finish_at = 	$this->finish_at->format('m/d/Y');
+
+		$this->convertData('Y-m-d', $start, $finish);
+	}
+
+	static public function convertDataTypesToView($start = false,$finish = false){
+		$obj = new OperationData();
+		$obj->convertData('d/m/Y', $start, $finish);
+	}
+
+	private function convertData($to, $start, $finish){
+		$return = [];
+		if (!$start) $this->start_at = date($to, strtotime($this->start_at));
+		else $return['start'] = date($to, strtotime($start));
+
+		if (!$finish) $this->finish_at = date($to, strtotime($this->finish_at));
+		else $return['finish'] = date($to, strtotime($finish));
+
+		if(!$finish && !$start) return true;
+
+		return $return;
+	}
+
 	public function add(){
+		$this->convertDateTypesToDB();
 		$sql = "insert into ".self::$tablename." (item_id,client_id,start_at,finish_at,user_id) ";
 		$sql .= "value (\"$this->item_id\",\"$this->client_id\",\"$this->start_at\",\"$this->finish_at\",\"$this->user_id\")";
 		return Executor::doit($sql);
@@ -55,6 +84,8 @@ class OperationData {
 		return Model::many($query[0],new OperationData());
 	}
 	public static function getRentsByRange($start,$finish){
+		$start = date('Y-m-d', strtotime($start));
+		$finish = date('Y-m-d', strtotime($finish));
 		$sql = "select * from ".self::$tablename." where (  (\"$start\">=start_at and \"$finish\"<=finish_at) or (start_at>=\"$start\" and finish_at<=\"$finish\") )  and returned_at is NULL ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperationData());
@@ -62,6 +93,8 @@ class OperationData {
 
 
 	public static function getByRange($start,$finish){
+		$start = date('Y-m-d', strtotime($start));
+		$finish = date('Y-m-d', strtotime($finish));
 		$sql = "select * from ".self::$tablename." where returned_at>=\"$start\" and returned_at<=\"$finish\" and returned_at is not NULL ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperationData());
@@ -80,17 +113,23 @@ class OperationData {
 	}
 
 	public static function getAllByItemIdAndRange($id,$start,$finish){
+		$start = date('Y-m-d', strtotime($start));
+		$finish = date('Y-m-d', strtotime($finish));
 		$sql = "select * from ".self::$tablename." where item_id=$id and ((returned_at>=\"$start\" and returned_at<=\"$finish\") or (start_at>=\"$start\" and start_at<=\"$finish\") or (finish_at>=\"$start\" and finish_at<=\"$finish\")) ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperationData());
 	}
 	public static function getAllByClientId($id){
+		$start = date('Y-m-d', strtotime($start));
+		$finish = date('Y-m-d', strtotime($finish));
 		$sql = "select * from ".self::$tablename." where client_id=$id";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperationData());
 	}
 
 	public static function getAllByClientIdAndRange($id,$start,$finish){
+		$start = date('Y-m-d', strtotime($start));
+		$finish = date('Y-m-d', strtotime($finish));
 		$sql = "select * from ".self::$tablename." where client_id=$id and ((returned_at>=\"$start\" and returned_at<=\"$finish\") or (start_at>=\"$start\" and start_at<=\"$finish\") or (finish_at>=\"$start\" and finish_at<=\"$finish\")) ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperationData());

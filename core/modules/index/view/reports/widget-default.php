@@ -8,13 +8,13 @@
     <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><?php echo L::fields_start; ?></span>
-		  <input type="date" name="start_at" value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
+		  <input type="date" name="start_at" value="<?php if(isset($_GET['start_at']) && $_GET['start_at']!=""){ echo $_GET['start_at']; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
 		</div>
     </div>
     <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><?php echo L::fields_end; ?></span>
-		  <input type="date" name="finish_at" value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
+		  <input type="date" name="finish_at" value="<?php if(isset($_GET['finish_at']) && $_GET['finish_at']!=""){ echo $_GET['finish_at']; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
 		</div>
     </div>
     <div class="col-lg-6">
@@ -24,8 +24,8 @@
   </div>
 </form>
 <?php
-if(isset($_GET["start_at"]) && $_GET["start_at"]!="" && isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){
-	$users = OperationData::getByRange($_GET["start_at"],$_GET["finish_at"]);
+if(isset($_GET['start_at']) && $_GET['start_at']!="" && isset($_GET['finish_at']) && $_GET['finish_at']!=""){
+	$users = OperationData::getByRange($_GET['start_at'],$_GET['finish_at']);
 		if(count($users)>0){
 			// si hay usuarios
 			$_SESSION["report_data"] = $users;
@@ -35,7 +35,7 @@ if(isset($_GET["start_at"]) && $_GET["start_at"]!="" && isset($_GET["finish_at"]
 			<?php echo L::fields_reports; ?></div>
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th><?php echo L::fields_copy; ?></th>
+			<th><?php echo L::fields_copie; ?></th>
 			<th><?php echo L::fields_title; ?></th>
 			<th><?php echo L::fields_client; ?></th>
 			<th><?php echo L::fields_date; ?></th>

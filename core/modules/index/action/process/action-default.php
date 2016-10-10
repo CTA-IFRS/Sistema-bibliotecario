@@ -17,8 +17,8 @@ if( $go && isset($_SESSION["cart"])){
 			$op = new OperationData();
 			 $op->item_id = $c["item_id"] ;
 			 $op->client_id = $_POST["client_id"];
-			 $op->start_at = date('Y-m-d', strtotime($_POST["start_at"]));
-			 $op->finish_at = date('Y-m-d', strtotime($_POST["finish_at"]));
+			 $op->start_at = $_POST["start_at"];
+			 $op->finish_at =$_POST["finish_at"];
 			 $op->user_id=$_SESSION["user_id"];
 			$add = $op->add();
 
