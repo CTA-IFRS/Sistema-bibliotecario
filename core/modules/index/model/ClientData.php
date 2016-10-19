@@ -6,7 +6,12 @@ class ClientData {
 		$this->created_at = "NOW()";
 	}
 
+	public function convertDateTypesToDB(){
+		$this->created_at = Dates::convertDateTypesToDB($this->created_at);
+	}
+
 	public function add(){
+		$this->convertDateTypesToDB();
 		$sql = "insert into ".self::$tablename." (name,lastname,address,phone,email,created_at) ";
 		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->address\",\"$this->phone\",\"$this->email\",$this->created_at)";
 		Executor::doit($sql);
@@ -43,19 +48,19 @@ class ClientData {
 	public static function getAll(){
 		$sql = "select *  from ".self::$tablename." order by created_at desc";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ClientData());
+		return Dates::convertDataTypesToView(Model::many($query[0],new OperationData()));
 	}
 
 	public static function getAllActive(){
 		$sql = "select * from client where last_active_at>=date_sub(NOW(),interval 3 second)";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ClientData());
+		return Dates::convertDataTypesToView(Model::many($query[0],new OperationData()));
 	}
 
 	public static function getAllUnActive(){
 		$sql = "select * from client where last_active_at<=date_sub(NOW(),interval 3 second)";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ClientData());
+		return Dates::convertDataTypesToView(Model::many($query[0],new OperationData()));
 	}
 
 
