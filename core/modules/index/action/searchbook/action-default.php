@@ -4,18 +4,18 @@
 $products = BookData::getLike($_GET["product"]);
 if(count($products)>0){
 	?>
-<h3>Resultados de la Busqueda</h3>
+<h3><?php echo L::titles_search_result; ?></h3>
 <table class="table table-bordered table-hover">
 	<thead>
-		<th>ISBN</th>
-		<th>Titulo</th>
-		<th>Cantidad</th>
+		<th><?php echo L::fields_isbn; ?></th>
+		<th><?php echo L::fields_title; ?></th>
+		<th><?php echo L::fields_quantity; ?></th>
 	</thead>
 	<?php
 $products_in_cero=0;
 	 foreach($products as $product):
 	?>
-		
+
 	<tr>
 		<td style="width:80px;"><?php echo $product->isbn; ?></td>
 		<td><?php echo $product->title; ?></td>
@@ -24,20 +24,20 @@ $products_in_cero=0;
 <?php $items = ItemData::getAvaiableByBookId($product->id);?>
 <div class="input-group">
 <select class="form-control" name="item_id" required>
-	<option value=""> -- EJEMPLAR --</option>
+	<option value=""><?php echo L::fields_select_copy; ?></option>
 	<?php foreach($items as $item):?>
 	<option value="<?php echo $item->id; ?>"> <?php echo $item->code; ?></option>
 	<?php endforeach; ?>
 </select>
       <span class="input-group-btn">
-		<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Agregar</button>
+		<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> <?php echo L::buttons_add; ?></button>
       </span>
     </div>
 
 
 		</form></td>
 	</tr>
-	
+
 	<?php endforeach;?>
 </table>
 
