@@ -43,7 +43,7 @@ $products_in_cero=0;
 
 	<?php
 }else{
-	echo "<br><p class='alert alert-danger'>No se encontro el producto</p>";
+	echo "<br><p class='alert alert-danger'>" . L::messages_product_not_found . "</p>";
 }
 ?>
 <hr><br>

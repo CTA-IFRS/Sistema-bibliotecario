@@ -34,7 +34,7 @@ if( $go && isset($_SESSION["cart"])){
 if($go){
 print "<script>window.location='index.php?view=rents';</script>";
 }else{
-print "<script>alert('Rango de fecha invalido!');</script>";
+print "<script>alert('" . L::messages_invalid_date_interval; . "');</script>";
 print "<script>window.location='index.php?view=rent';</script>";
 }
 
