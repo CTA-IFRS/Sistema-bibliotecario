@@ -8,13 +8,13 @@
     <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><?php echo L::fields_start; ?></span>
-		  <input type="date" name="start_at" required value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
+		  <input type="date" name="start_at" required value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_start_date; ?>">
 		</div>
     </div>
     <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><?php echo L::fields_end; ?></span>
-		  <input type="date" name="finish_at" required value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
+		  <input type="date" name="finish_at" required value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_finish_date; ?>">
 		</div>
     </div>
     <div class="col-lg-6">
@@ -43,8 +43,7 @@ if(count($products)>0){
 		<th><?php echo L::fields_client; ?></th>
 		<th><?php echo L::fields_start; ?></th>
 		<th><?php echo L::fields_end; ?></th>
-		<th></th>
-		<th></th>
+		<th><?php echo L::fields_operations; ?></th>
 	</thead>
 	<?php foreach($products as $sell):
 $item = $sell->getItem();
@@ -63,12 +62,12 @@ $client = $sell->getClient();
 		</td>
 		<td><?php echo $sell->start_at; ?></td>
 		<td><?php echo $sell->finish_at; ?></td>
-		<td style="width:60px;">
-		<?php if($sell->returned_at==""):?>
-		<a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-success"><?php echo L::buttons_finish; ?></a>
-	<?php endif;?>
+		<td style="text-align: right">
+			<?php if($sell->returned_at==""):?>
+			<a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-success"><?php echo L::buttons_finish; ?></a>
+			<?php endif;?>
+			<a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-danger">Excluir</a>
 		</td>
-		<td style="width:30px;"><a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
 	</tr>
 <?php endforeach; ?>
 </table>
