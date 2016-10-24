@@ -29,9 +29,9 @@
 			<thead>
 			<th><?php echo L::fields_full_name; ?></th>
 			<th><?php echo L::fields_username; ?></th>
-			<th><?php echo L::fields_is_active; ?></th>
-			<th><?php echo L::fields_is_admin; ?></th>
-			<th></th>
+			<th><?php echo L::fields_status; ?></th>
+			<th><?php echo L::fields_user; ?></th>
+			<th><?php echo L::fields_operations; ?></th>
 			</thead>
 			<?php
 			foreach($users as $user){
@@ -41,15 +41,21 @@
 				<td><?php echo $user->username; ?></td>
 				<td>
 					<?php if($user->is_active):?>
-						<i class="glyphicon glyphicon-ok"></i>
+						Ativo
+					<?php else: ?>
+						Não ativo
 					<?php endif; ?>
 				</td>
 				<td>
 					<?php if($user->is_admin):?>
-						<i class="glyphicon glyphicon-ok"></i>
+						Administrador
+					<?php else: ?>
+						Comum
 					<?php endif; ?>
 				</td>
-				<td style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php L::buttons_edit; ?></a></td>
+				<td style="width:30px;">
+					<a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-primary"><?php echo L::buttons_edit; ?></a>
+				</td>
 				</tr>
 				<?php
 
