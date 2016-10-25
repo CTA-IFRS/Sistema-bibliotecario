@@ -59,11 +59,11 @@ $total = 0;
 
     <div class="col-lg-3">
     <label class="control-label"><?php echo L::fields_start; ?></label>
-      <input type="date" name="start_at" required class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
+      <input type="date" name="start_at" required class="form-control" placeholder="<?php echo L::fields_start_date; ?>">
     </div>
     <div class="col-lg-3">
     <label class="control-label"><?php echo L::fields_end; ?></label>
-      <input type="date" name="finish_at" required class="form-control" placeholder="<?php echo L::fields_keyword; ?>">
+      <input type="date" name="finish_at" required class="form-control" placeholder="<?php echo L::fields_finish_date; ?>">
     </div>
     <div class="col-lg-2">
     <label class="control-label"><br></label>
@@ -80,8 +80,8 @@ $total = 0;
 <thead>
 	<th style="width:40px;"><?php echo L::fields_code; ?></th>
 	<th style="width:40px;"><?php echo L::fields_copie; ?></th>
-	<th><?php echo L::fields_title; ?></th>
-	<th></th>
+	<th><?php echo L::fields_book; ?></th>
+	<th><?php echo L::fields_operations ?></th>
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
 $book = BookData::getById($p["book_id"]);
@@ -93,7 +93,7 @@ $item = ItemData::getById($p["item_id"]);
 	<td ><?php echo $item->code; ?></td>
 	<td ><?php echo $book->title; ?></td>
 	<td style="width:30px;">
-	<a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?></a>
+	<a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?></a>
 	</td>
 </tr>
 
