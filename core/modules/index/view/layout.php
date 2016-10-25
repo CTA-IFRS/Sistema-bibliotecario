@@ -14,6 +14,17 @@
 
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        .mandatory {
+            background: url('./img/mandatory_fields.svg') no-repeat !important;
+            background-size: contain !important;
+            text-align: left !important;
+            text-indent: -20000px !important;
+            display: inline-block;;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
     <script src="js/jquery-1.10.2.js"></script>
     <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
     <link href='vendor/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
@@ -21,8 +32,6 @@
     <script src='vendor/js/moment-with-locales.js'></script>
     <script src='vendor/fullcalendar/fullcalendar.min.js'></script>
     <script src="vendor/fullcalendar/locale-all.js" charset="utf-8"></script>
-
-    </script>
     <?php endif; ?>
     <script src='vendor/select2/select2.min.js'></script>
 
