@@ -27,7 +27,7 @@
 			<th><?php echo L::fields_address; ?></th>
 			<th><?php echo L::fields_email; ?></th>
 			<th><?php echo L::fields_phone; ?></th>
-			<th></th>
+			<th><?php echo L::fields_operations; ?></th>
 			</thead>
 			<?php
 			foreach($users as $user){

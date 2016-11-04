@@ -6,7 +6,7 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="name" required class="form-control" id="name" placeholder="<?php echo L::fields_name; ?>">
     </div>
@@ -27,19 +27,19 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="email" class="form-control" id="email" placeholder="<?php echo L::fields_email; ?>">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_phone; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_phone; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="phone" class="form-control" id="phone" placeholder="<?php echo L::fields_phone; ?>">
     </div>
   </div>
-  <p class="alert alert-info">* <?php echo L::messages_mandatory_fields; ?></p>
+  <p class="alert alert-info"><span class="mandatory"></span> <?php echo L::messages_mandatory_fields; ?></p>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

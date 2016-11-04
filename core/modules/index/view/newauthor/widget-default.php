@@ -6,13 +6,13 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="name" required class="form-control" id="name" placeholder="<?php echo L::fields_name; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="<?php echo L::fields_lastname; ?>">
     </div>

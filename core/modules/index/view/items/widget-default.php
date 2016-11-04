@@ -1,5 +1,8 @@
 <?php
-$book = BookData::getById($_GET["id"]);
+if (isset($_GET["id"]))
+	$book = BookData::getById($_GET["id"]);
+else
+ 	header("Location: index.php?view=books");
 ?>
 <div class="row">
 	<div class="col-md-12">
@@ -19,7 +22,7 @@ $book = BookData::getById($_GET["id"]);
 			<thead>
 			<th><?php echo L::fields_code; ?></th>
 			<th><?php echo L::fields_state; ?></th>
-			<th></th>
+			<th><?php echo L::fields_operations; ?></th>
 			</thead>
 			<?php
 			foreach($users as $user){

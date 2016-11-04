@@ -9,6 +9,7 @@ $editorials = EditorialData::getAll();
 <div class="row">
 <div class="col-md-12">
 <h1><?php echo L::titles_new_book; ?></h1>
+<p class="alert alert-info"><span class="mandatory"></span> <?php echo L::messages_mandatory_fields; ?></p>
 <form class="form-horizontal" role="form" method="post" action="./?action=addbook" id="addbook">
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_isbn; ?></label>
@@ -17,7 +18,7 @@ $editorials = EditorialData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_title; ?></label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_title; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-lg-10">
       <input type="text" name="title" required class="form-control" id="inputEmail1" placeholder="<?php echo L::fields_title; ?>">
     </div>
@@ -49,7 +50,7 @@ $editorials = EditorialData::getAll();
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_category; ?></label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_category; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-lg-10">
 <select name="category_id" class="form-control">
 <option value=""><?php echo L::fields_select; ?></option>
@@ -60,7 +61,7 @@ $editorials = EditorialData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_publisher; ?></label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_publisher; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-lg-10">
 <select name="editorial_id" class="form-control">
 <option value=""><?php echo L::fields_select; ?></option>
@@ -71,7 +72,7 @@ $editorials = EditorialData::getAll();
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_author; ?></label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_author; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-lg-10">
 <select name="author_id" class="form-control">
 <option value=""><?php echo L::fields_select; ?></option>
@@ -81,11 +82,6 @@ $editorials = EditorialData::getAll();
 </select>
     </div>
   </div>
-
-
-
-
-
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

@@ -12,13 +12,13 @@ $client = ClientData::getById($_GET["id"]);
     <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><?php echo L::fields_start; ?></span>
-		  <input type="date" name="start_at" required value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="Palabra clave">
+		  <input type="date" name="start_at" required value="<?php if(isset($_GET["start_at"]) && $_GET["start_at"]!=""){ echo $_GET["start_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_start_date; ?>">
 		</div>
     </div>
     <div class="col-lg-3">
 		<div class="input-group">
 		  <span class="input-group-addon"><?php echo L::fields_end; ?></span>
-		  <input type="date" name="finish_at" required value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="Palabra clave">
+		  <input type="date" name="finish_at" required value="<?php if(isset($_GET["finish_at"]) && $_GET["finish_at"]!=""){ echo $_GET["finish_at"]; } ?>" class="form-control" placeholder="<?php echo L::fields_finish_date; ?>">
 		</div>
     </div>
     <div class="col-lg-6">

@@ -15,7 +15,7 @@
 			<table class="table table-bordered table-hover">
 			<thead>
 			<th><?php echo L::fields_name; ?></th>
-			<th></th>
+			<th><?php echo L::fields_operations; ?></th>
 			</thead>
 			<?php
 			foreach($users as $user){

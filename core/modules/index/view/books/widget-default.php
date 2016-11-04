@@ -20,7 +20,7 @@ $books = BookData::getAll();
 			<th><?php echo L::fields_copies; ?></th>
 			<th><?php echo L::fields_available; ?></th>
 			<th><?php echo L::fields_category; ?></th>
-			<th></th>
+			<th><?php echo L::fields_operations; ?></th>
 			</thead>
 			<?php
 			foreach($books as $user){

@@ -7,25 +7,25 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="name" value="<?php echo $user->name;?>" required class="form-control" id="name" placeholder="<?php echo L::fields_name; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="lastname" value="<?php echo $user->lastname;?>"  class="form-control" id="lastname" placeholder="<?php echo L::fields_lastname; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_username; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_username; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="username" value="<?php echo $user->username;?>" class="form-control" required id="username" placeholder="<?php echo L::fields_username; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="email" value="<?php echo $user->email;?>" class="form-control" id="email" placeholder="<?php echo L::fields_email; ?>">
     </div>
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <p class="alert alert-info">* <?php echo L::messages_mandatory_fields; ?></p>
+  <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

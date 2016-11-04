@@ -90,8 +90,8 @@ $editorials = EditorialData::getAll();
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="id" value="<?php echo $book->id; ?>">
-      <button type="submit" class="btn btn-success"><?php L::buttons_add_book; ?></button>
-      <button type="reset" class="btn btn-default" id="clear"><?php L::buttons_clean_fields; ?></button>
+      <button type="submit" class="btn btn-success"><?php echo L::buttons_add_book; ?></button>
+      <button type="reset" class="btn btn-default" id="clear"><?php echo L::buttons_clean_fields; ?></button>
     </div>
   </div>
 </form>

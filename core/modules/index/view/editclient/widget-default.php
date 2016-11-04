@@ -7,7 +7,7 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_name; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="name" value="<?php echo $client->name;?>" class="form-control" id="name" placeholder="<?php echo L::fields_name; ?>">
     </div>
@@ -20,13 +20,13 @@
   </div>
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_address; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_address; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="address" value="<?php echo $client->address;?>" class="form-control" required id="username" placeholder="<?php echo L::fields_address; ?>">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email; ?> *</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_email; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="email" value="<?php echo $client->email;?>" class="form-control" id="email" placeholder="<?php echo L::fields_email; ?>">
     </div>
@@ -41,7 +41,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label"></label>
     <div class="col-md-6">
-  <p class="text-info">* <?php echo L::messages_mandatory_fields; ?></p>
+  <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
     </div>
   </div>
   <div class="form-group">
