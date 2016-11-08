@@ -3,7 +3,7 @@ $item = ItemData::getById($_GET["id"]);
 $book = BookData::getById($item->book_id); ?>
 <div class="row">
 	<div class="col-md-12">
-	<h1><?php echo $book->title; ?> <small><?php echo L::titles_edit_copie; ?></small></h1>
+	<h2><?php echo $book->title; ?> <small><?php echo L::titles_edit_copie; ?></small></h2>
 	<br>
 	<form class="form-horizontal" method="post" id="addcategory" action="./index.php?action=updateitem" role="form">
 

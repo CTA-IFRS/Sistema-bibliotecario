@@ -3,7 +3,7 @@
 <div class="btn-group pull-right">
 	<a href="index.php?view=neweditorial" class="btn btn-default"><i class='fa fa-th-list'></i> <?php echo L::buttons_new_publisher; ?></a>
 </div>
-		<h1><?php echo L::titles_publishers; ?></h1>
+		<h2><?php echo L::titles_publishers; ?></h2>
 <br>
 		<?php
 

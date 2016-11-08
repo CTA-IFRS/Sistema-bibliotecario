@@ -9,7 +9,7 @@ else
 <div class="btn-group pull-right">
 	<a href="index.php?view=newitem&book_id=<?php echo $book->id; ?>" class="btn btn-default"><i class='fa fa-th-list'></i> <?php echo L::buttons_new_copie; ?></a>
 </div>
-		<h1><?php echo $book->title;?> <small><?php echo L::fields_copies; ?></small></h1>
+		<h2><?php echo $book->title;?> <small><?php echo L::fields_copies; ?></small></h2>
 <br>
 		<?php
 

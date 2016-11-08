@@ -8,7 +8,7 @@ else
 ?>
 <div class="row">
 	<div class="col-md-12">
-		<h1><i class='fa fa-clock-o'></i> <?php echo $item->code." - ".$book->title; ?> </h1>
+		<h2><i class='fa fa-clock-o'></i> <?php echo $item->code." - ".$book->title; ?> </h2>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="itemhistory">

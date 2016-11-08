@@ -8,7 +8,7 @@ $editorials = EditorialData::getAll();
 
 <div class="row">
 <div class="col-md-12">
-<h1><?php echo $book->title; ?> <small><?php echo L::titles_edit_book; ?></small></h1>
+<h2><?php echo $book->title; ?> <small><?php echo L::titles_edit_book; ?></small></h2>
 <form class="form-horizontal" role="form" method="post" action="./?action=updatebook" id="addbook">
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_isbn; ?></label>

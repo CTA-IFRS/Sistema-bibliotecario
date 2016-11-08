@@ -3,7 +3,7 @@
 <div class="btn-group pull-right">
 	<a href="index.php?view=newauthor" class="btn btn-default"><i class='fa fa-th-list'></i> <?php echo L::buttons_new_author; ?></a>
 </div>
-		<h1><?php echo L::titles_authors; ?></h1>
+		<h2><?php echo L::titles_authors; ?></h2>
 <br>
 		<?php
 

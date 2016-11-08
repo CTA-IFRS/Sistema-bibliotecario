@@ -3,7 +3,7 @@
 <div class="btn-group pull-right">
 	<a href="index.php?view=newcategory" class="btn btn-default"><i class='fa fa-th-list'></i> <?php echo L::buttons_new_category; ?></a>
 </div>
-		<h1><?php echo L::titles_categories; ?></h1>
+		<h2><?php echo L::titles_categories; ?></h2>
 <br>
 		<?php
 

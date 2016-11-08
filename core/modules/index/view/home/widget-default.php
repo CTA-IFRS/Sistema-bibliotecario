@@ -35,7 +35,7 @@ foreach($events as $event){
 
 <div class="row">
 <div class="col-md-12">
-<h1><?php L::titles_calendar; ?></h1>
+<h2><?php L::titles_calendar; ?></h2>
 <div id="calendar"></div>
 
 </div>

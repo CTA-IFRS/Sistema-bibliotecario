@@ -18,7 +18,7 @@ if(Session::getUID()!=""){
     	 endif; ?>
     		<div class="panel panel-primary">
 			  	<div class="panel-heading">
-			    	<h3 class="panel-title"><?php echo L::titles_login; ?></h3>
+			    	<h2 class="panel-title"><?php echo L::titles_login; ?></h2>
 			 	</div>
 			  	<div class="panel-body">
 			    	<form accept-charset="UTF-8" role="form" method="post" action="index.php?view=processlogin">

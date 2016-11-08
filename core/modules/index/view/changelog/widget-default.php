@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-md-12">
-<h1>Sistema de Citas Medicas</h1>
+<h2>Sistema de Citas Medicas</h2>
 <p>Bienvenido a <b>BookMedik</b> un Sistema de Citas Medicas util para consultorios medicos y/o medicos independientes.</p>
 <h4> v2.5</h4>
 <ul>

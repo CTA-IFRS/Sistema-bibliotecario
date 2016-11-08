@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-		<h1><i class='fa fa-th-large'></i> <?php echo L::titles_loans; ?></h1>
+		<h2><i class='fa fa-th-large'></i> <?php echo L::titles_loans; ?></h2>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="rents">

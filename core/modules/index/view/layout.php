@@ -51,7 +51,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./"><?php echo L::titles_page_title; ?></a>
+          <a class="navbar-brand" href="./"><h1 style="font-size: 1em; padding:0; margin:0;"><?php echo L::titles_page_title; ?></h1></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

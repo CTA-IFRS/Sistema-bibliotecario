@@ -4,7 +4,7 @@
 	<div class="col-md-12">
           <a href="index.php?view=newbook" class="btn btn-default pull-right"><i class="fa fa-book"></i> <?php echo L::buttons_new_book; ?></a>
 
-		<h1><?php echo L::titles_books; ?></h1>
+		<h2><?php echo L::titles_books; ?></h2>
 
 
 		<?php

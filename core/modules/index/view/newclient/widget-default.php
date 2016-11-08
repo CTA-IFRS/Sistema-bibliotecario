@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-	<h1><?php echo L::titles_new_client; ?></h1>
+	<h2><?php echo L::titles_new_client; ?></h2>
 	<br>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=addclient" role="form">
 

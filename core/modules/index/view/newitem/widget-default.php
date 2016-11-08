@@ -4,7 +4,7 @@ else header('Location: index.php?view=books');
 ?>
 <div class="row">
 	<div class="col-md-12">
-	<h1><?php echo $book->title; ?> <small><?php echo L::titles_new_item; ?></small></h1>
+	<h2><?php echo $book->title; ?> <small><?php echo L::titles_new_item; ?></small></h2>
 	<br>
 	<form class="form-horizontal" method="post" id="addcategory" action="./index.php?action=additem" role="form">
 

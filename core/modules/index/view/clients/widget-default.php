@@ -12,7 +12,7 @@
 </div>
 -->
 </div>
-		<h1><?php echo L::titles_clients; ?></h1>
+		<h2><?php echo L::titles_clients; ?></h2>
 <br>
 		<?php
 

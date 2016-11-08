@@ -3,7 +3,7 @@
 ?>
 <div class="row">
 	<div class="col-md-12">
-	<h1><?php echo L::titles_loan; ?></h1>
+	<h2><?php echo L::titles_loan; ?></h2>
 	<p><b><?php echo L::messages_search_book_by_code_isbn; ?></b></p>
 		<form id="searchp">
 		<div class="row">

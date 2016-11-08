@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 	<a href="index.php?view=newuser" class="btn btn-default pull-right"><i class='glyphicon glyphicon-user'></i> <?php echo L::buttons_new_user; ?></a>
-		<h1><?php echo L::titles_users_list; ?></h1>
+		<h2><?php echo L::titles_users_list; ?></h2>
 <br>
 		<?php
 		/*

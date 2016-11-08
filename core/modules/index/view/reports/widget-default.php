@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-<h1><?php echo L::titles_reports; ?></h1>
+<h2><?php echo L::titles_reports; ?></h2>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="reports">
