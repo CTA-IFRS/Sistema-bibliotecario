@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 	<a href="index.php?view=newuser" class="btn btn-default pull-right"><i class='glyphicon glyphicon-user'></i> <?php echo L::buttons_new_user; ?></a>
 		<h2><?php echo L::titles_users_list; ?></h2>
-<br>
+		<br>
 		<?php
 		/*
 		$u = new UserData();
@@ -40,18 +40,16 @@
 				<td><?php echo $user->name." ".$user->lastname; ?></td>
 				<td><?php echo $user->username; ?></td>
 				<td>
-					<?php if($user->is_active):?>
-						Ativo
-					<?php else: ?>
-						Não ativo
-					<?php endif; ?>
+					<?php
+					if($user->is_active) echo L::fields_active;
+					else echo L::fields_not_active;
+					?>
 				</td>
 				<td>
-					<?php if($user->is_admin):?>
-						Administrador
-					<?php else: ?>
-						Comum
-					<?php endif; ?>
+					<?php
+					if($user->is_admin) echo L::fields_admin;
+					else echo L::fields_common;
+					?>
 				</td>
 				<td style="width:30px;">
 					<a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-primary"><?php echo L::buttons_edit; ?></a>
