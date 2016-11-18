@@ -5,7 +5,8 @@ if(count($_POST)>0){
 	$user->name = $_POST["name"];
 	$user->lastname = $_POST["lastname"];
 	$user->update();
-print "<script>window.location='index.php?view=authors';</script>";
+	ob_clean();
+	header('Location: index.php?view=authors');
 
 
 }

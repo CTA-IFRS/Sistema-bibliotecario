@@ -26,7 +26,8 @@ class Core {
 	}
 
 	public static function redir($url){
-		echo "<script>window.location='".$url."';</script>";
+		ob_clean();
+		header('Location: ' . $url);
 	}
 
 	public static function alert($text){

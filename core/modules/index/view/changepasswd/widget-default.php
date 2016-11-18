@@ -8,13 +8,17 @@ if(Session::getUID()!=""){
 		$user->password = sha1(md5($_POST["newpassword"]));
 		$user->update();
 		setcookie("password_updated","true");
-		print "<script>window.location='logout.php';</script>";
+		ob_clean();
+		header('Location: logout.php');
 	}else{
-		print "<script>window.location='index.php?view=security&msg=invalidpasswd';</script>";		
+		print "<script>window.location='index.php?view=security&msg=invalidpasswd';</script>";
+		ob_clean();
+		header('Location: index.php?view=security&msg=invalidpasswd');
 	}
 
 }else {
-		print "<script>window.location='index.php';</script>";
+	ob_clean();
+	header('Location: index.php');
 }
 
 

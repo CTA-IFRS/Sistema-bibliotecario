@@ -6,7 +6,8 @@ if(count($_POST)>0){
 	$user->status_id = $_POST["status_id"];
 	$user->update();
 
-print "<script>window.location='index.php?view=items&id=$user->book_id';</script>";
+	ob_clean();
+	header('Location: index.php?view=item&id=' . $user->book_id);
 
 
 }

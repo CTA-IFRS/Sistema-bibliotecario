@@ -144,7 +144,9 @@ if(Session::getUID()!=""){
     <!-- JavaScript -->
 
 <script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
-<script>
-</script>
-  </body>
+<?php
+if (isset($_SESSION['message'])) print '<script>alert(\'' . $_SESSION['message'] . '\')</script>';
+unset($_SESSION['message']);
+?>
+</body>
 </html>

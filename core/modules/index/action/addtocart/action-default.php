@@ -47,13 +47,14 @@ if($found==false){
 //	print_r($cart);
 	$_SESSION["cart"] = $cart;
 }else{
- print "<script>alert('" . L::messages_copy_already_on_list . "');</script>";
+ $_SESSION['message'] = L::messages_copy_already_on_list;
 
 }
 
 }
 }
- print "<script>window.location='index.php?view=rent';</script>";
+ob_clean();
+header('Location: index.php?view=rent');
 // unset($_SESSION["cart"]);
 
 ?>

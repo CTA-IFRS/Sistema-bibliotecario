@@ -11,7 +11,8 @@ if(count($_POST)>0){
 	$user->phone = $_POST["phone"];
 	$user->add();
 
-print "<script>window.location='index.php?view=clients';</script>";
+	ob_clean();
+	header('Location: index.php?view=clients');
 
 
 }

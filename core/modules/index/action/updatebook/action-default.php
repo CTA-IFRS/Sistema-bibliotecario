@@ -14,8 +14,9 @@ $r->author_id = $_POST["author_id"]!="" ? $_POST["author_id"] : "NULL";
 $r->update();
 
 
-Core::alert(L::messages_updated_with_success);
-print "<script>window.location='./index.php?view=books';</script>";
+$_SESSION['message'] = L::messages_updated_with_success;
+ob_clean();
+header('Location: index.php?view=books');
 
 }
 

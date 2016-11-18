@@ -32,10 +32,12 @@ if( $go && isset($_SESSION["cart"])){
 		}
 	}
 if($go){
-print "<script>window.location='index.php?view=rents';</script>";
+	ob_clean();
+	header('Location: index.php?view=rents');
 }else{
-print "<script>alert('" . L::messages_invalid_date_interval . "');</script>";
-print "<script>window.location='index.php?view=rent';</script>";
+	$_SESSION['message'] = L::messages_invalid_date_interval;
+	ob_clean();
+	header('Location: index.php?view=rent');
 }
 
 

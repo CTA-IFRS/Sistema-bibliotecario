@@ -6,7 +6,8 @@ if(count($_POST)>0){
 	$user->lastname = $_POST["lastname"];
 	$user->add();
 
-print "<script>window.location='index.php?view=authors';</script>";
+	ob_clean();
+	header('Location: index.php?view=authors');
 
 
 }

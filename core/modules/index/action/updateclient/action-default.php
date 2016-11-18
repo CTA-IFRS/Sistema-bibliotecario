@@ -10,8 +10,9 @@ if(count($_POST)>0){
 	$user->phone = $_POST["phone"];
 	$user->update();
 
-Core::alert(L::messages_updated_with_success);
-print "<script>window.location='index.php?view=clients';</script>";
+$_SESSION['message'] = L::messages_updated_with_success;
+ob_clean();
+header('Location: index.php?view=clients');
 
 
 }

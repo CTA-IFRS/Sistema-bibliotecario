@@ -7,9 +7,8 @@ if(count($_POST)>0){
 	$user->status_id = $_POST["status_id"];
 	$user->add();
 
-print "<script>window.location='index.php?view=items&id=$_POST[book_id]';</script>";
-
-
+	ob_clean();
+	header('Location: index.php?view=item&id=' . $_POST['book_id']);
 }
 
 

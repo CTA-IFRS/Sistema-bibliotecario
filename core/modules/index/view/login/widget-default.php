@@ -1,7 +1,8 @@
 <?php
 
 if(Session::getUID()!=""){
-		print "<script>window.location='index.php?view=home';</script>";
+	ob_clean();
+	header('Location: index.php?view=home');
 }
 
 ?>

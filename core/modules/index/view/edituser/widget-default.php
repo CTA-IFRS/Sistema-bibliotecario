@@ -3,7 +3,7 @@
 	<div class="col-md-12">
 	<h2><?php echo L::titles_edit_user; ?></h2>
 	<br>
-		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=updateuser" role="form">
+		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=updateuser" role="form">
 
 
   <div class="form-group">
