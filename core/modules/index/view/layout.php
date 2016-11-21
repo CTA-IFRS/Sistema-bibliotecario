@@ -94,8 +94,6 @@ if(Session::getUID()!=""){
 
   }?>
           <ul class="nav navbar-nav navbar-right navbar-user">
-            <li class="dropdown user-dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
             <li class="dropdown user-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
