@@ -96,14 +96,6 @@ if(Session::getUID()!=""){
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown user-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <b><u>EVILNΛPSIS</u></b> <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a target="_blank" href="http://evilnapsis.com/"><?php echo L::evilnapsis_website; ?></a></li>
-          <li><a target="_blank" href="http://evilnapsis.com/2015/05/16/sistema-bibliotecario-library/"><?php echo L::evilnapsis_about_library; ?></a></li>
-          <li><a target="_blank" href="http://evilnapsis.com/store/"><?php echo L::evilnapsis_appstore; ?></a></li>
-        </ul>
-        </li>
 
             <li class="dropdown user-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
