@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <style>
         .mandatory {
-            background: url('./img/mandatory_fields.svg') no-repeat !important;
+            background: url('./img/mandatory_fields.png') no-repeat !important;
             background-size: contain !important;
             text-align: left !important;
             text-indent: -20000px !important;

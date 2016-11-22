@@ -7,7 +7,7 @@ if(count($_POST)>0){
 	$user->update();
 
 	ob_clean();
-	header('Location: index.php?view=item&id=' . $user->book_id);
+	header('Location: index.php?view=items&id=' . $user->book_id);
 
 
 }
