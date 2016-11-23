@@ -1,4 +1,4 @@
-<?php
+	<?php
 if (isset($_GET["id"]))
 	$book = BookData::getById($_GET["id"]);
 else
@@ -29,7 +29,19 @@ else
 				?>
 				<tr>
 				<td><?php echo $user->code; ?></td>
-				<td><?php echo $user->getStatus()->name; ?></td>
+				<td><?php
+				switch ($user->status_id) {
+					case 1:
+						echo L::fields_is_available;
+						break;
+					case 2:
+						echo L::fields_busy;
+						break;
+					case 3:
+						echo L::fields_inactive;
+						break;
+				}
+				?></td>
 				<td style="width:200px;">
 								<a href="index.php?view=itemhistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a>
 <a href="index.php?view=edititem&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?action=delitem&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>

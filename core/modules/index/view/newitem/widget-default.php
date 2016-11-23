@@ -19,9 +19,9 @@ else header('Location: index.php?view=books');
     <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_status; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
 	<select name="status_id" class="form-control">
-		<?php foreach(StatusData::getAll() as $p):?>
-		<option value="<?php echo $p->id; ?>"><?php echo $p->name; ?></option>
-		<?php endforeach; ?>
+		<option value="1"><?php echo L::fields_is_available; ?></option>
+		<option value="2"><?php echo L::fields_busy; ?></option>
+		<option value="3"><?php echo L::fields_inactive; ?></option>
 	</select>
     </div>
   </div>

@@ -11,7 +11,6 @@ class ItemData {
 	}
 
 	public function getBook(){ return BookData::getById($this->book_id); }
-	public function getStatus(){ return StatusData::getById($this->status_id); }
 
 	public function add(){
 		$sql = "insert into item (code,status_id,book_id) ";
