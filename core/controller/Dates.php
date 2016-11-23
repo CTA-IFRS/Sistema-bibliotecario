@@ -2,6 +2,8 @@
 
 class Dates {
     static public function convertDateTypesToDB($date){
+        if ($date == "NOW()") return $date;
+
 		$date = DateTime::createFromFormat('d/m/Y', $date);
 
 		$date = $date->format('m/d/Y');

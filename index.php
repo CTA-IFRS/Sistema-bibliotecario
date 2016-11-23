@@ -9,6 +9,8 @@ session_start();
 include "core/autoload.php";
 include "vendor/php-i18n/i18n.class.php";
 
+date_default_timezone_set('America/Sao_Paulo');
+
 // Start the internationalization class (I don't know if this needs to be here or elsewhere)
 $i = new i18n();
 
