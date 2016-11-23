@@ -1,5 +1,5 @@
 # Sistema bibliotecário
-Sistema de gestão de livros para pequenas bibliotecas que o CTA-IFRS está modificando a fim de corrigir bugs e principalmente melhorar a acessibilidade. Segue o link do projeto original: https://github.com/evilnapsis/library-php
+Sistema de gestão de livros para pequenas bibliotecas que o Centro Tecnológico de Acessibilidade do IFRS adotou e está modificando a fim de corrigir bugs e principalmente melhorar a acessibilidade. Segue o link do projeto original: https://github.com/evilnapsis/library-php
 
 ## Principais características
 
