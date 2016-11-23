@@ -1,7 +1,7 @@
 # Sistema bibliotecário
 Sistema de gestão de livros para pequenas bibliotecas que o CTA-IFRS está modificando a fim de corrigir bugs e principalmente melhorar a acessibilidade. Segue o link do projeto original: https://github.com/evilnapsis/library-php
 
-### Version 3.0
+### Versão 3.0
 O projeto original está na versão 2.0, devida as mudanças significativas que fizemos, denominamos essa a versão 3.0 do sistema. Abaixo segue uma relação genérica das mudanças que realizamos:
 
 - Correção de bugs
