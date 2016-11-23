@@ -129,17 +129,6 @@ CREATE TABLE `operation` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `status`
---
-
-CREATE TABLE `status` (
-  `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `user`
 --
 
@@ -287,7 +276,6 @@ ALTER TABLE `book`
 -- Limitadores para a tabela `item`
 --
 ALTER TABLE `item`
-  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
   ADD CONSTRAINT `item_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`);
 
 --
