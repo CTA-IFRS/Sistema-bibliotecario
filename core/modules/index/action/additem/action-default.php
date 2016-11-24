@@ -8,7 +8,7 @@ if(count($_POST)>0){
 	$user->add();
 
 	ob_clean();
-	header('Location: index.php?view=item&id=' . $_POST['book_id']);
+	header('Location: index.php?view=items&id=' . $_POST['book_id']);
 }
 
 
