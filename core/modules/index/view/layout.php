@@ -20,7 +20,7 @@
             background-size: contain !important;
             text-align: left !important;
             text-indent: -20000px !important;
-            display: inline-block;;
+            display: inline-block;
             width: 10px;
             height: 10px;
         }
