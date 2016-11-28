@@ -8,13 +8,14 @@ class ItemData {
 		$this->tatus_id = "";
 		$this->code = "";
 		$this->id = "";
+		$this->patrimonio = "";
 	}
 
 	public function getBook(){ return BookData::getById($this->book_id); }
 
 	public function add(){
-		$sql = "insert into item (code,status_id,book_id) ";
-		$sql .= "value (\"$this->code\",\"$this->status_id\",\"$this->book_id\")";
+		$sql = "insert into item (code,patrimonio,status_id,book_id) ";
+		$sql .= "value (\"$this->code\",\"$this->patrimonio\",\"$this->status_id\",\"$this->book_id\")";
 		return Executor::doit($sql);
 	}
 

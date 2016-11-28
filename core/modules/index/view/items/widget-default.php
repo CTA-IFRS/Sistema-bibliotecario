@@ -22,6 +22,7 @@ else
 			<thead>
 			<th><?php echo L::fields_code; ?></th>
 			<th><?php echo L::fields_state; ?></th>
+			<th><?php echo L::fields_patrimony; ?></th>
 			<th><?php echo L::fields_operations; ?></th>
 			</thead>
 			<?php
@@ -42,6 +43,8 @@ else
 						break;
 				}
 				?></td>
+				<td><?php echo ($user->patrimonio == null) ? L::fields_no_patrimony : $user->patrimonio; ?></td>
+				<!-- TODO: fazer isso ai em cima -->
 				<td style="width:200px;">
 								<a href="index.php?view=itemhistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a>
 <a href="index.php?view=edititem&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?action=delitem&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
