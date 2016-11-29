@@ -17,9 +17,9 @@ else header('Location: index.php?view=books');
   </div>
 
   <div class="form-group">
-	<label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_patrimony; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
+	<label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_patrimony; ?></label>
 	<div class="col-md-6">
-	  <input type="text" name="patrimonio" required class="form-control" id="code" placeholder="<?php echo L::fields_patrimony; ?>">
+	  <input type="text" name="patrimonio" class="form-control" id="code" placeholder="<?php echo L::fields_patrimony; ?>">
 	</div>
   </div>
 
