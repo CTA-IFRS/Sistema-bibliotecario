@@ -14,6 +14,15 @@ $book = BookData::getById($item->book_id); ?>
       <input type="text" name="code" required value="<?php echo $item->code; ?>" class="form-control" id="code" placeholder="<?php echo L::fields_code; ?>">
     </div>
   </div>
+
+  <div class="form-group">
+	<label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_patrimony; ?></label>
+	<div class="col-md-6">
+	  <input type="text" name="patrimonio" class="form-control" id="code" placeholder="<?php echo L::fields_patrimony; ?>">
+	</div>
+  </div>
+
+  
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_status ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
