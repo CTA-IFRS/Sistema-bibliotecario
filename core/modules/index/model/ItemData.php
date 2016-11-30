@@ -5,7 +5,7 @@ class ItemData {
 
 	public function ItemData(){
 		$this->book_id = "";
-		$this->tatus_id = "";
+		$this->status_id = "";
 		$this->code = "";
 		$this->id = "";
 		$this->patrimonio = "";
@@ -30,7 +30,7 @@ class ItemData {
 
 // partiendo de que ya tenemos creado un objecto ItemData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set code=\"$this->code\",status_id=\"$this->status_id\" where id=$this->id";
+		$sql = "update ".self::$tablename." set code=\"$this->code\",status_id=\"$this->status_id\",patrimonio=\"$this->patrimonio\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
