@@ -49,12 +49,12 @@ $total = 0;
 
     <div class="col-lg-3">
     <label class="control-label"><?php echo L::fields_client; ?></label>
-<select name="client_id" required class="form-control">
-<option value=""><?php echo L::fields_select; ?></option>
-  <?php foreach(ClientData::getAll() as $p):?>
-    <option value="<?php echo $p->id; ?>"><?php echo $p->name." ".$p->lastname; ?></option>
-  <?php endforeach; ?>
-</select>
+	<select name="client_id" required class="form-control">
+	<option value=""><?php echo L::fields_select; ?></option>
+	  <?php foreach(ClientData::getAll() as $p):?>
+	    <option value="<?php echo $p->id; ?>"><?php echo $p->name." ".$p->lastname; ?></option>
+	  <?php endforeach; ?>
+	</select>
     </div>
 
     <div class="col-lg-3">
@@ -102,5 +102,4 @@ $item = ItemData::getById($p["item_id"]);
 </div>
 </div>
 </div>
-<br><br><br><br><br>
 <?php endif; ?>

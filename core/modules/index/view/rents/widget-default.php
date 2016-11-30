@@ -82,6 +82,5 @@ $client = $sell->getClient();
 }
 
 ?>
-<br><br><br><br><br><br><br><br><br><br>
 	</div>
 </div>

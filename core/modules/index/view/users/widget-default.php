@@ -4,22 +4,6 @@
 		<h2><?php echo L::titles_users_list; ?></h2>
 		<br>
 		<?php
-		/*
-		$u = new UserData();
-		print_r($u);
-		$u->name = "Agustin";
-		$u->lastname = "Ramos";
-		$u->email = "evilnapsis@gmail.com";
-		$u->password = sha1(md5("l00lapal00za"));
-		$u->add();
-
-
-		$f = $u->createForm();
-		print_r($f);
-		echo $f->label("name")." ".$f->render("name");
-		*/
-		?>
-		<?php
 
 		$users = UserData::getAll();
 		if(count($users)>0){
@@ -62,7 +46,7 @@
 
 
 		}else{
-			// no hay usuarios
+			echo "<p class='alert alert-danger'>" . L::messages_no_users . "</p>";
 		}
 
 
