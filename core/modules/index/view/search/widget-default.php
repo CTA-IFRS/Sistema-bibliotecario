@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h2><?php echo L::titles_search_books; ?></h2>
+        <h2><?php echo L::titles_search_items; ?></h2>
         <p><b><?php echo L::messages_search_item_by_something; ?></b></p>
         <form id="searchp">
             <div class="row">
