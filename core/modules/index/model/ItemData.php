@@ -81,7 +81,7 @@ class ItemData {
 	}
 
 	public static function getLike($q){
-		$sql = "select * from ".self::$tablename." where name like '%$q%'";
+		$sql = "select * from ".self::$tablename." where code like '%$q%' or patrimonio like '%$q'";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ItemData());
 	}
