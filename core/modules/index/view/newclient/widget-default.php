@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 	<h2><?php echo L::titles_new_client; ?></h2>
     <div class="col-md-12">
-        <p class="alert alert-info"><span class="mandatory"></span> <?php echo L::messages_mandatory_fields; ?></p>
+        <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
     </div>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=addclient" role="form">
 

@@ -9,7 +9,7 @@ $editorials = EditorialData::getAll();
 <div class="row">
 <div class="col-md-12">
 <h2><?php echo L::titles_new_book; ?></h2>
-<p class="alert alert-info"><span class="mandatory"></span> <?php echo L::messages_mandatory_fields; ?></p>
+<p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
 <form class="form-horizontal" role="form" method="post" action="./?action=addbook" id="addbook">
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_isbn; ?></label>

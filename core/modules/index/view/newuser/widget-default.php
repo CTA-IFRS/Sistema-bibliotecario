@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 	<h2><?php echo L::titles_add_user; ?></h2>
 	<div class="col-md-12">
-        <p class="alert alert-info"><span class="mandatory"></span> <?php echo L::messages_mandatory_fields; ?></p>
+        <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
     </div>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=adduser" role="form">
 
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="lastname" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
+    <label for="lastname" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?></label>
     <div class="col-md-6">
       <input type="text" name="lastname" class="form-control" id="lastname" placeholder="<?php echo L::fields_lastname; ?>">
     </div>
@@ -28,12 +28,12 @@
   <div class="form-group">
     <label for="email" class="col-lg-2 control-label"><?php echo L::fields_email; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
-      <input type="text" name="email" class="form-control" id="email" placeholder="<?php echo L::fields_email; ?>">
+      <input type="text" name="email" class="form-control" id="email" placeholder="<?php echo L::fields_email; ?>" required>
     </div>
   </div>
 
   <div class="form-group">
-    <label for="password" class="col-lg-2 control-label"><?php echo L::fields_password; ?></label>
+    <label for="password" class="col-lg-2 control-label"><?php echo L::fields_password; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="password" name="password" required class="form-control" id="password" placeholder="<?php echo L::fields_password; ?>">
     </div>

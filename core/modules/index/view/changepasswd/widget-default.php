@@ -11,7 +11,6 @@ if(Session::getUID()!=""){
 		ob_clean();
 		header('Location: logout.php');
 	}else{
-		print "<script>window.location='index.php?view=security&msg=invalidpasswd';</script>";
 		ob_clean();
 		header('Location: index.php?view=security&msg=invalidpasswd');
 	}
