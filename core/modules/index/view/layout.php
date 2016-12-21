@@ -38,7 +38,7 @@
   </head>
 
   <body>
-
+  <a href="#page-wrapper">Pular para o Conteúdo</a>
     <div id="wrapper">
 
       <!-- Sidebar -->
