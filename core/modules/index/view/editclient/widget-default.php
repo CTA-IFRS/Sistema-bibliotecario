@@ -2,7 +2,9 @@
 <div class="row">
 	<div class="col-md-12">
 	<h2><?php echo L::titles_edit_client; ?></h2>
-	<br>
+    <div class="col-md-12">
+        <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
+    </div>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=updateclient" role="form">
 
 
@@ -13,7 +15,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?>*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label"><?php echo L::fields_lastname; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-md-6">
       <input type="text" name="lastname" value="<?php echo $client->lastname;?>" required class="form-control" id="lastname" placeholder="<?php echo L::fields_lastname; ?>">
     </div>
@@ -40,9 +42,6 @@
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label"></label>
-    <div class="col-md-6">
-  <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
-    </div>
   </div>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

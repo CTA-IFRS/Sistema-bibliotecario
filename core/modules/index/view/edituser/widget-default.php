@@ -2,7 +2,9 @@
 <div class="row">
 	<div class="col-md-12">
 	<h2><?php echo L::titles_edit_user; ?></h2>
-	<br>
+    <div class="col-md-12">
+        <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
+    </div>
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=updateuser" role="form">
 
 
@@ -61,8 +63,6 @@
   </div>
     </div>
   </div>
-
-  <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
