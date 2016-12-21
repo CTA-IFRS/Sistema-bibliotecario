@@ -1,4 +1,4 @@
-<br><br><br><br><div class="row">
+<div class="row">
 	<div class="col-md-3">
 	</div>
 	<div class="col-md-6">
@@ -36,24 +36,5 @@
     </div>
   </div>
 </form>
-
-<script>
-$("#changepasswd").submit(function(e){
-	if($("#password").val()=="" || $("#newpassword").val()=="" || $("#confirmnewpassword").val()==""){
-		e.preventDefault();
-		alert("<?php echo L::messages_must_not_have_whitespaces; ?>");
-
-	}else{
-		if($("#newpassword").val() == $("#confirmnewpassword").val()){
-//			alert("Correcto");
-		}else{
-			e.preventDefault();
-			alert("<?php echo L::messages_psw_dont_match; ?>");
-		}
-	}
-});
-
-</script>
 	</div>
 </div>
-<br><br><br><br><br><br><br><br><br>
