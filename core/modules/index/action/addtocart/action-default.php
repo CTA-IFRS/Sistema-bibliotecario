@@ -48,6 +48,7 @@ if($found==false){
 	$_SESSION["cart"] = $cart;
 }else{
  $_SESSION['message'] = L::messages_copy_already_on_list;
+ $_SESSION['alert_type'] = 'warning';
 
 }
 

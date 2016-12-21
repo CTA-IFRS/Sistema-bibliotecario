@@ -36,6 +36,7 @@ if($go){
 	header('Location: index.php?view=rents');
 }else{
 	$_SESSION['message'] = L::messages_invalid_date_interval;
+    $_SESSION['alert_type'] = 'danger';
 	ob_clean();
 	header('Location: index.php?view=rent');
 }

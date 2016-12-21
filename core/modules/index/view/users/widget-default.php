@@ -46,7 +46,7 @@
 
 
 		}else{
-			echo "<p class='alert alert-danger'>" . L::messages_no_users . "</p>";
+			echo "<p class='alert alert-danger' role='alert'>" . L::messages_no_users . "</p>";
 		}
 
 

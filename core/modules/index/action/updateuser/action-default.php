@@ -18,6 +18,7 @@ if(count($_POST)>0){
 		$user->password = sha1(md5($_POST["password"]));
 		$user->update_passwd();
 		$_SESSION['message'] = L::messages_has_updated_password;
+        $_SESSION['alert_type'] = 'success';
 
 	}
 	ob_clean();

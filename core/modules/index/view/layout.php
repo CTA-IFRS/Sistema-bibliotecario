@@ -118,14 +118,20 @@ if(Session::getUID()!=""){
 
 
       <div id="page-wrapper">
+          <?php
+          if (isset($_SESSION['message']))
+          {
+              if (!isset($_SESSION['alert_type'])) $_SESSION['alert_type'] = 'info';
+              echo '<p class="alert alert-' . $_SESSION['alert_type'] .'" role="alert">' . $_SESSION['message'] . '</p>';
+              unset($_SESSION['message']);
+          }
 
-<?php
-  // puedo cargar otras funciones iniciales
-  // dentro de la funcion donde cargo la vista actual
-  // como por ejemplo cargar el corte actual
-  View::load("login");
+        // puedo cargar otras funciones iniciales
+        // dentro de la funcion donde cargo la vista actual
+        // como por ejemplo cargar el corte actual
+        View::load("login");
 
-?>
+        ?>
 
 
 
@@ -136,9 +142,5 @@ if(Session::getUID()!=""){
     <!-- JavaScript -->
 
 <script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
-<?php
-if (isset($_SESSION['message'])) print '<script>alert(\'' . $_SESSION['message'] . '\')</script>';
-unset($_SESSION['message']);
-?>
 </body>
 </html>
