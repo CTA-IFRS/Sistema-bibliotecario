@@ -27,6 +27,8 @@ if( $go && isset($_SESSION["cart"])){
 
 			unset($_SESSION["cart"]);
 			setcookie("selled","selled");
+            $_SESSION['message'] = L::messages_rented_with_success;
+            $_SESSION['alert_type'] = 'success';
 		}
 ////////////////////
 		}

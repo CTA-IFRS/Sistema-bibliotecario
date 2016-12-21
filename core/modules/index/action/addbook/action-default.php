@@ -12,6 +12,8 @@ $r->category_id = $_POST["category_id"]!="" ? $_POST["category_id"] : "NULL";
 $r->editorial_id = $_POST["editorial_id"]!="" ? $_POST["editorial_id"] : "NULL";
 $r->author_id = $_POST["author_id"]!="" ? $_POST["author_id"] : "NULL";
 $r->add();
+$_SESSION['message'] = L::messages_inserted_with_success;
+$_SESSION['alert_type'] = 'success';
 }
 //Core::alert("Agregado exitosamente!");
 Core::redir("./index.php?view=books");

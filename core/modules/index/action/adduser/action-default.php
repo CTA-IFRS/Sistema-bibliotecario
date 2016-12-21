@@ -11,6 +11,8 @@ if(count($_POST)>0){
 	$user->is_active = 1;
 	$user->password = sha1(md5($_POST["password"]));
 	$user->add();
+    $_SESSION['message'] = L::messages_inserted_with_success;
+    $_SESSION['alert_type'] = 'success';
 
 	ob_clean();
 	header('Location: index.php?view=users');

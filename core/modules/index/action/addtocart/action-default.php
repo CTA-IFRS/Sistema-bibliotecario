@@ -46,6 +46,8 @@ if($found==false){
 	$cart[$nc] = $product;
 //	print_r($cart);
 	$_SESSION["cart"] = $cart;
+    $_SESSION['message'] = L::messages_add_to_cart_success;
+    $_SESSION['alert_type'] = 'success';
 }else{
  $_SESSION['message'] = L::messages_copy_already_on_list;
  $_SESSION['alert_type'] = 'warning';
