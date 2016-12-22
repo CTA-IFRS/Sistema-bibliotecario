@@ -71,7 +71,7 @@ $total = 0;
     </div>
     <div class="col-lg-1">
     <label class="control-label"><br></label>
-    <a href="./?action=clearcart" class="btn btn-danger btn-block"><i class="fa fa-trash"></i></a>
+    <a href="./?action=clearcart" class="btn btn-danger btn-block"><?php echo L::buttons_delete; ?></a>
     </div>
   </div>
 
