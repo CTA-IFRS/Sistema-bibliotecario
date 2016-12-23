@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
     </div>
-<form class="form-horizontal" id="changepasswd" method="post" action="index.php?view=changepasswd" role="form">
+<form class="form-horizontal" id="changepasswd" method="post" action="index.php?action=changepasswd" role="form">
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-5 control-label"><?php echo L::fields_actual_psw; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
     <div class="col-lg-7">
