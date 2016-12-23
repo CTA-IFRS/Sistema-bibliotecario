@@ -10,13 +10,13 @@ $rents = OperationData::getRents();
     </div>
     <div class="col-md-5">
         <h3><?php echo L::titles_welcome; ?></h3>
-        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>
-        <ul>
-            <li>Lorem ipsum</li>
-            <li>Dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-        </ul>
-        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>
+<!--        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>-->
+<!--        <ul>-->
+<!--            <li>Lorem ipsum</li>-->
+<!--            <li>Dolor sit amet</li>-->
+<!--            <li>Consectetur adipiscing elit</li>-->
+<!--        </ul>-->
+<!--        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>-->
     </div>
     <div class="col-md-7">
         <h3><?php echo L::titles_late_rents; ?></h3>
