@@ -24,6 +24,11 @@
             width: 10px;
             height: 10px;
         }
+
+        .only-sr {
+            position: absolute;
+            left: -999em;
+        }
     </style>
     <script src="js/jquery-1.10.2.js"></script>
     <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
@@ -38,7 +43,7 @@
   </head>
 
   <body>
-  <a href="#page-wrapper">Pular para o Conteúdo</a>
+  <a href="#page-wrapper" class="only-sr">Pular para o Conteúdo</a>
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -63,20 +68,20 @@ if(Session::getUID()!=""):
 ?>
          <ul class="nav navbar-nav">
           </ul>
-          <ul class="nav navbar-nav side-nav">
-          <li><a href="index.php?view=home"><i class="fa fa-home"></i> <?php echo L::navbar_home; ?></a></li>
-          <li><a href="index.php?view=rent"><i class="fa fa-cube"></i> <?php echo L::navbar_loan; ?></a></li>
-          <li><a href="index.php?view=rents"><i class="fa fa-th-large"></i> <?php echo L::navbar_loans; ?></a></li>
-          <li><a href="index.php?view=books"><i class="fa fa-book"></i> <?php echo L::navbar_books; ?></a></li>
-          <li><a href="index.php?view=search"><i class="fa fa-search"></i> <?php echo L::navbar_search_items; ?></a></li>
-<!--          <li><a href="index.php?view=search"><i class="fa fa-search"></i> --><?php //echo L::navbar_search_books; ?><!--</a></li>-->
-          <li><a href="index.php?view=clients"><i class="fa fa-male"></i> <?php echo L::navbar_clients; ?></a></li>
-          <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> <?php echo L::navbar_categories; ?></a></li>
-          <li><a href="index.php?view=editorials"><i class="fa fa-th-list"></i> <?php echo L::navbar_publishers; ?></a></li>
-          <li><a href="index.php?view=authors"><i class="fa fa-th-list"></i> <?php echo L::navbar_authors; ?></a></li>
+          <ul class="nav navbar-nav side-nav" role="menu">
+          <li role="menuitem"><a href="index.php?view=home"><i class="fa fa-home"></i> <?php echo L::navbar_home; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=rent"><i class="fa fa-cube"></i> <?php echo L::navbar_loan; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=books"><i class="fa fa-book"></i> <?php echo L::navbar_books; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=rents"><i class="fa fa-th-large"></i> <?php echo L::navbar_loans; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=search"><i class="fa fa-search"></i> <?php echo L::navbar_search_items; ?></a></li>
+<!--          <li role="menuitem"><a href="index.php?view=search"><i class="fa fa-search"></i> --><?php //echo L::navbar_search_books; ?><!--</a></li>-->
+          <li role="menuitem"><a href="index.php?view=clients"><i class="fa fa-male"></i> <?php echo L::navbar_clients; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=categories"><i class="fa fa-th-list"></i> <?php echo L::navbar_categories; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=editorials"><i class="fa fa-th-list"></i> <?php echo L::navbar_publishers; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=authors"><i class="fa fa-th-list"></i> <?php echo L::navbar_authors; ?></a></li>
           <?php if($u->is_admin):?>
-          <li><a href="index.php?view=reports"><i class="fa fa-area-chart"></i> <?php echo L::navbar_relatories; ?></a></li>
-          <li><a href="index.php?view=users"><i class="fa fa-users"></i> <?php echo L::navbar_users; ?> </a></li>
+          <li role="menuitem"><a href="index.php?view=reports"><i class="fa fa-area-chart"></i> <?php echo L::navbar_relatories; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=users"><i class="fa fa-users"></i> <?php echo L::navbar_users; ?> </a></li>
         <?php endif;?>
           </ul>
 

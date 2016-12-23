@@ -1,42 +1,69 @@
 <?php
-
-$thejson = array();
-$events = OperationData::getRents();
-foreach($events as $event){
-	$item = ItemData::getById($event->item_id);
-	$book = $item->getBook();
-
-	$thejson[] = array("title"=>$item->code." - ".$book->title,"url"=>"","start"=>$event->start_at,"end"=>$event->finish_at);
-
-}
-// print_r(json_encode($thejson));
-
+$rents = OperationData::getRents();
 ?>
-<script>
-	$(document).ready(function() {
-
-		$('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			locale: 'pt-br',
-			defaultDate: '<?php echo date("Y-m-d");?>',
-			editable: false,
-			eventLimit: true, // allow "more" link when too many events
-			events: <?php echo json_encode($thejson); ?>
-		});
-
-	});
-
-</script>
-
-
 <div class="row">
-<div class="col-md-12">
-<h2><?php L::titles_calendar; ?></h2>
-<div id="calendar"></div>
+    <div class="col-md-12">
+        <h2><?php echo L::titles_homepage; ?></h2>
+        <a href="#laterents" class="only-sr">Pular para Tabela de Empréstimos Atrasados</a>
+        <a href="#explain" class="only-sr">Pular para Explicação do Sistema</a>
+        <hr>
+    </div>
+    <div class="col-md-5">
+        <h3>Bem Vindo ao Sistema Bibliotecário!</h3>
+        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>
+        <ul>
+            <li>Lorem ipsum</li>
+            <li>Dolor sit amet</li>
+            <li>Consectetur adipiscing elit</li>
+        </ul>
+        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>
+    </div>
+    <div class="col-md-7">
+        <h3>Empréstimos Atrasados</h3>
+        <?php
+        foreach ($rents as $rent)
+        {
+            if (strtotime(Dates::convertDateTypesToDB($rent->finish_at)) < strtotime(date('Y-m-d')))
+                $none = false;
+            else
+                if (!isset($none)) $none = true;
+        }
+        if (!$none):
+        ?>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Exemplar</th>
+                <th>Livro</th>
+                <th>Cliente</th>
+                <th>Vencimento</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach($rents as $rent):
+                $item = $rent->getItem();
+                $book = $item->getBook();
+                $client = $rent->getClient();
 
-</div>
+                if (strtotime(Dates::convertDateTypesToDB($rent->finish_at)) < strtotime(date('Y-m-d'))):
+            ?>
+            <tr>
+                <td><?php echo $item->code; ?></td>
+                <td><?php echo $book->title; ?></td>
+                <td><?php echo $client->name." ".$client->lastname; ?></td>
+                <td><?php echo $rent->finish_at; ?></td>
+            </tr>
+            <?php
+            endif;
+            endforeach;
+            ?>
+        </table>
+        <?php
+        else:
+            echo '<p class="alert alert-danger">Não há empréstimos atrasados!</p>';
+        endif;
+        ?>
+    </div>
+
 </div>
