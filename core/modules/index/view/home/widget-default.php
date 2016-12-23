@@ -60,9 +60,9 @@ $rents = OperationData::getRents();
             ?>
         </table>
         <?php
+        else: echo '<p class="alert alert-info">' . L::messages_no_late_rents . '</p>';
         endif;
-        else
-            echo '<p class="alert alert-info">' . L::messages_no_late_rents . '</p>';
+        else echo '<p class="alert alert-info">' . L::messages_no_late_rents . '</p>';
         ?>
     </div>
 
