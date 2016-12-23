@@ -71,8 +71,8 @@ if(Session::getUID()!=""):
           <ul class="nav navbar-nav side-nav" role="menu">
           <li role="menuitem"><a href="index.php?view=home"><i class="fa fa-home"></i> <?php echo L::navbar_home; ?></a></li>
           <li role="menuitem"><a href="index.php?view=rent"><i class="fa fa-cube"></i> <?php echo L::navbar_loan; ?></a></li>
-          <li role="menuitem"><a href="index.php?view=books"><i class="fa fa-book"></i> <?php echo L::navbar_books; ?></a></li>
           <li role="menuitem"><a href="index.php?view=rents"><i class="fa fa-th-large"></i> <?php echo L::navbar_loans; ?></a></li>
+          <li role="menuitem"><a href="index.php?view=books"><i class="fa fa-book"></i> <?php echo L::navbar_books; ?></a></li>
           <li role="menuitem"><a href="index.php?view=search"><i class="fa fa-search"></i> <?php echo L::navbar_search_items; ?></a></li>
 <!--          <li role="menuitem"><a href="index.php?view=search"><i class="fa fa-search"></i> --><?php //echo L::navbar_search_books; ?><!--</a></li>-->
           <li role="menuitem"><a href="index.php?view=clients"><i class="fa fa-male"></i> <?php echo L::navbar_clients; ?></a></li>
