@@ -28,7 +28,7 @@ $rents = OperationData::getRents();
             else
                 if (!isset($none)) $none = true;
         }
-        if (!$none):
+        if (isset($none)) if (!$none):
         ?>
         <table class="table table-hover">
             <thead>
@@ -60,9 +60,9 @@ $rents = OperationData::getRents();
             ?>
         </table>
         <?php
-        else:
-            echo '<p class="alert alert-danger">' . L::messages_no_late_rents . '</p>';
         endif;
+        else
+            echo '<p class="alert alert-info">' . L::messages_no_late_rents . '</p>';
         ?>
     </div>
 
