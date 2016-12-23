@@ -9,7 +9,7 @@ $rents = OperationData::getRents();
         <hr>
     </div>
     <div class="col-md-5">
-        <h3>Bem Vindo ao Sistema Bibliotecário!</h3>
+        <h3><?php echo L::titles_welcome; ?></h3>
         <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>
         <ul>
             <li>Lorem ipsum</li>
@@ -19,7 +19,7 @@ $rents = OperationData::getRents();
         <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>
     </div>
     <div class="col-md-7">
-        <h3>Empréstimos Atrasados</h3>
+        <h3><?php echo L::titles_late_rents; ?></h3>
         <?php
         foreach ($rents as $rent)
         {
@@ -33,10 +33,10 @@ $rents = OperationData::getRents();
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Exemplar</th>
-                <th>Livro</th>
-                <th>Cliente</th>
-                <th>Vencimento</th>
+                <th><?php echo L::fields_copie; ?></th>
+                <th><?php echo L::fields_book; ?></th>
+                <th><?php echo L::fields_client; ?></th>
+                <th><?php echo L::fields_expire; ?></th>
             </tr>
             </thead>
             <tbody>
@@ -61,7 +61,7 @@ $rents = OperationData::getRents();
         </table>
         <?php
         else:
-            echo '<p class="alert alert-danger">Não há empréstimos atrasados!</p>';
+            echo '<p class="alert alert-danger">' . L::messages_no_late_rents . '</p>';
         endif;
         ?>
     </div>
