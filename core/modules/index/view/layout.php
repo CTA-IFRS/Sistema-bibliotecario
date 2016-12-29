@@ -104,7 +104,7 @@ if(Session::getUID()!=""){
 
             <li class="dropdown user-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <?php echo $user; ?> <b class="caret"></b>
+        <?php echo 'Bem vindo '+$user; ?> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
           <li><a href="index.php?view=configuration"><?php echo L::navbar_config; ?></a></li>
