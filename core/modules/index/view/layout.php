@@ -43,7 +43,8 @@
   </head>
 
   <body>
-  <a href="#page-wrapper" class="only-sr">Pular para o Conteúdo</a>
+  <a href="#page-wrapper" class="only-sr" accesskey="1">Pular para o Conteúdo</a>
+  <a href="#navegacao" class="only-sr" accesskey="2">Pular para o Menu de Navegaçao</a>
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -66,7 +67,7 @@ $u=null;
 if(Session::getUID()!=""):
   $u = UserData::getById(Session::getUID());
 ?>
-         <ul class="nav navbar-nav">
+         <ul class="nav navbar-nav" id="navegacao">
           </ul>
           <ul class="nav navbar-nav side-nav" role="menu">
           <li role="menuitem"><a href="index.php?view=home"><i class="fa fa-home"></i> <?php echo L::navbar_home; ?></a></li>
