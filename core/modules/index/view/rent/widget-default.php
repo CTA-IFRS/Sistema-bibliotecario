@@ -42,7 +42,7 @@ $total = 0;
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<h2><?php echo L::titles_sell_list; ?></h2>
+<h2><?php echo L::titles_cart_list; ?></h2>
 
 <form class="form-horizontal" role="form" method="post" action="./?action=process">
   <div class="form-group">

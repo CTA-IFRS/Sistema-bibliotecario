@@ -1,6 +1,7 @@
 <?php
 
-if(Session::getUID()!=""){
+if(isset($_SESSION['user_id']))
+    if ($_SESSION['user_id'] !=""){
 	ob_clean();
 	header('Location: index.php?view=home');
 }
@@ -10,7 +11,7 @@ if(Session::getUID()!=""){
 <div class="row vertical-offset-100">
     	<div class="col-md-4 col-md-offset-4">
     	<?php if(isset($_COOKIE['password_updated'])):?>
-    		<div class="alert alert-success">
+    		<div class="alert alert-success" role="alert" aria-live="assertive">
     		<p><i class='glyphicon glyphicon-off'></i> <?php echo L::messages_if_changed_password_with_success; ?></p>
     		<p><?php echo L::messages_can_login_with_new_password; ?></p>
 
