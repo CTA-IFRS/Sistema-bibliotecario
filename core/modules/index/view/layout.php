@@ -127,7 +127,7 @@ if(Session::getUID()!=""){
           if (isset($_SESSION['message']))
           {
               if (!isset($_SESSION['alert_type'])) $_SESSION['alert_type'] = 'info';
-              echo '<p class="alert alert-' . $_SESSION['alert_type'] .'" role="alert">' . $_SESSION['message'] . '</p>';
+              echo '<p role="alert" aria-live="assertive" class="alert alert-' . $_SESSION['alert_type'] .'">' . $_SESSION['message'] . '</p>';
               unset($_SESSION['message']);
           }
 
