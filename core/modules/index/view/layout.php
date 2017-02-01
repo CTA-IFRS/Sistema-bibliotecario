@@ -153,9 +153,45 @@ if(Session::getUID()!=""){
 
 <script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
   <script>
-      $(document).ready(function(){
-          DataTableA11Y('#datatable');
-      });
+          $('#datatable').DataTable({
+              keys: true,
+              language : {
+                  emptyTable: "<?php echo L::datatables_sEmptyTable; ?>",
+                  info: "<?php echo L::datatables_sInfo; ?>",
+                  infoEmpty: "<?php echo L::datatables_sInfoEmpty; ?>",
+                  infoFiltered: "<?php echo L::datatables_sInfoFiltered; ?>",
+                  infoPostFix: "<?php echo L::datatables_sInfoPostFix; ?>",
+                  infoThousands: "<?php echo L::datatables_sInfoThousands; ?>",
+                  lengthMenu: "<?php echo L::datatables_sLengthMenu; ?>",
+                  loadingRecords: "<?php echo L::datatables_sLoadingRecords; ?>",
+                  processing: "<?php echo L::datatables_sProcessing; ?>",
+                  zeroRecords: "<?php echo L::datatables_sZeroRecords; ?>",
+                  search: "<?php echo L::datatables_sSearch; ?>",
+                  paginate: {
+                      next: "<?php echo L::datatables_oPaginate_sNext; ?>",
+                      previous: "<?php echo L::datatables_oPaginate_sPrevious; ?>",
+                      first: "<?php echo L::datatables_oPaginate_sFirst; ?>",
+                      last: "<?php echo L::datatables_oPaginate_sLast; ?>",
+                  },
+                  aria: {
+                      sortAscending: "<?php echo L::datatables_oAria_sSortAscending; ?>",
+                      sortDescending: "<?php echo L::datatables_oAria_sSortDescending; ?>"
+                  }
+              }
+          });
+
+          $('.paginate_button').find('a:first').each(function () {
+              if ($.isNumeric($(this)[0].innerHTML)){
+                  $(this).attr('aria-label', 'Página ' + $(this)[0].innerHTML);
+              }
+              else {
+                  $(this).attr('aria-label', $(this)[0].innerHTML);
+              }
+          });
+
+          $('.active').find('a:first').each(function () {
+              $(this).attr('aria-selected', 'true');
+          });
   </script>
 </body>
 </html>
