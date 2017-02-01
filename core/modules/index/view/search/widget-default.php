@@ -73,7 +73,7 @@
                         </div>
 
                     </form>
-                    <table class="table table-bordered table-hover">
+                     <table id="datatable" class="table  table-hover">
                         <thead>
                         <th style="width:40px;"><?php echo L::fields_code; ?></th>
                         <th style="width:40px;"><?php echo L::fields_copie; ?></th>

@@ -36,7 +36,7 @@ $products = OperationData::getRents();
 if(count($products)>0){
 ?>
 <br>
-<table class="table table-bordered table-hover	">
+ <table id="datatable" class="table  table-hover	">
 	<thead>
 		<th><?php echo L::fields_copie; ?></th>
 		<th><?php echo L::fields_book; ?></th>

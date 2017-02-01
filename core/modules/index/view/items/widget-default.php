@@ -18,7 +18,7 @@ else
 			// si hay usuarios
 			?>
 
-			<table class="table table-bordered table-hover">
+			 <table id="datatable" class="table  table-hover">
 			<thead>
 			<th><?php echo L::fields_code; ?></th>
 			<th><?php echo L::fields_state; ?></th>

@@ -30,7 +30,7 @@ $rents = OperationData::getRents();
         }
         if (isset($none)) if (!$none):
         ?>
-        <table class="table table-hover">
+         <table id="datatable" class="table table-hover">
             <thead>
             <tr>
                 <th><?php echo L::fields_copie; ?></th>

@@ -34,7 +34,7 @@ if(isset($_GET['start_at']) && $_GET['start_at']!="" && isset($_GET['finish_at']
 			<div class="panel-heading">
 				<h2 style="font-size: 1em; padding:0; margin:0.1em"><?php echo L::fields_reports; ?></h2>
 			</div>
-			<table class="table table-bordered table-hover">
+			 <table id="datatable" class="table  table-hover">
 			<thead>
 			<th><?php echo L::fields_copie; ?></th>
 			<th><?php echo L::fields_book; ?></th>

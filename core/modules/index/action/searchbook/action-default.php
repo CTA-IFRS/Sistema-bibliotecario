@@ -5,7 +5,7 @@ $products = BookData::getLike($_GET["product"]);
 if(count($products)>0){
 	?>
 <h2><?php echo L::titles_search_result; ?></h2>
-<table class="table table-bordered table-hover">
+<table id="datatable" class="table table-hover">
 	<thead>
 		<th><?php echo L::fields_isbn; ?></th>
 		<th><?php echo L::fields_book; ?></th>

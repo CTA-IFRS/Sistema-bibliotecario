@@ -21,7 +21,7 @@
 			// si hay usuarios
 			?>
 
-			<table class="table table-bordered table-hover">
+			 <table id="datatable" class="table  table-hover">
 			<thead>
 			<th><?php echo L::fields_full_name; ?></th>
 			<th><?php echo L::fields_address; ?></th>

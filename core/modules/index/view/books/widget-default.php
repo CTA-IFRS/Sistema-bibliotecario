@@ -12,7 +12,7 @@ $books = BookData::getAll();
 		if(count($books)>0){
 			// si hay usuarios
 			?>
-			<table class="table table-bordered table-hover">
+			 <table id="datatable" class="table  table-hover">
 			<thead>
 			<th><?php echo L::fields_isbn; ?></th>
 			<th><?php echo L::fields_title; ?></th>
