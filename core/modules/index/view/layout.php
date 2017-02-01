@@ -1,3 +1,4 @@
+<?php if(!is_numeric(Session::getUID()) && isset($_GET['view']) || isset($_GET['action'])) header('Location: index.php');?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -40,6 +41,11 @@
     <?php endif; ?>
     <script src='vendor/select2/select2.min.js'></script>
 
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+
+      <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+      <script src="vendor/a11y-datatables.js"></script>
   </head>
 
   <body>
@@ -75,7 +81,6 @@ if(Session::getUID()!=""):
           <li role="menuitem"><a href="index.php?view=rents"><i class="fa fa-th-large"></i> <?php echo L::navbar_loans; ?></a></li>
           <li role="menuitem"><a href="index.php?view=books"><i class="fa fa-book"></i> <?php echo L::navbar_books; ?></a></li>
           <li role="menuitem"><a href="index.php?view=search"><i class="fa fa-search"></i> <?php echo L::navbar_search_items; ?></a></li>
-<!--          <li role="menuitem"><a href="index.php?view=search"><i class="fa fa-search"></i> --><?php //echo L::navbar_search_books; ?><!--</a></li>-->
           <li role="menuitem"><a href="index.php?view=clients"><i class="fa fa-male"></i> <?php echo L::navbar_clients; ?></a></li>
           <li role="menuitem"><a href="index.php?view=categories"><i class="fa fa-th-list"></i> <?php echo L::navbar_categories; ?></a></li>
           <li role="menuitem"><a href="index.php?view=editorials"><i class="fa fa-th-list"></i> <?php echo L::navbar_publishers; ?></a></li>
@@ -148,5 +153,10 @@ if(Session::getUID()!=""){
     <!-- JavaScript -->
 
 <script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          DataTableA11Y('#datatable');
+      });
+  </script>
 </body>
 </html>
