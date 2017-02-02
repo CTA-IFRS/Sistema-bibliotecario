@@ -10,13 +10,30 @@ $rents = OperationData::getRents();
     </div>
     <div class="col-md-5">
         <h3><?php echo L::titles_welcome; ?></h3>
-<!--        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>-->
-<!--        <ul>-->
-<!--            <li>Lorem ipsum</li>-->
-<!--            <li>Dolor sit amet</li>-->
-<!--            <li>Consectetur adipiscing elit</li>-->
-<!--        </ul>-->
-<!--        <p>Dolor sit amet, consectetur adipisicing elit. Doloremque dolorum, excepturi exercitationem minima nam quas sit veritatis. Autem debitis explicabo labore libero natus optio provident soluta voluptatibus. Consequuntur, rem totam?</p>-->
+        <p>O Sistema Bibliotecário é um sistema simples de gerenciamento de bibliotecas. Foi originalmente desenvolvido pelo espanhol <a href="http://evilnapsis.com">evilnapsis</a>, e modificado pela equipe do <a href="http://cta.ifrs.edu.br">Centro Tecnológico de Acessibilidade do IFRS</a> à fim de torná-lo mais acessível. As principais características são:</p>
+        <ul>
+            <li>Clientes: gestão de clientes que podem retirar livros</li>
+            <li>Categorias de livros</li>
+            <li>Autores: gestão de autores de livros</li>
+            <li>Editoras: gestão de editoras</li>
+            <li>Livros: gestão dos livros que compõem o acervo bibliotecário, assim como os exemplares de cada livro</li>
+            <li>Usuário: Possibilidade de 1 ou mais usuário que tem acesso ao sistema</li>
+            <li>Emprestimos: Controle de empréstimos dos exemplares dos livros</li>
+
+        </ul>
+        <h4>Novidades da Versao 3.0</h4>
+        <ul>
+            <li>Correção de bugs</li>
+            <li>Correções no banco de dados</li>
+            <li>Melhorias diversas em relação a acessibilidade do sistema, principalmente para pessoas que utilizam leitores de tela</li>
+            <li>Internacionalização, possibilitando múltiplos idiomas</li>
+        </ul>
+        <h4>Saiba Mais</h4>
+        <ul>
+            <li><a href="https://github.com/evilnapsis/library-php">Repositório do Projeto Original (em espanhol)</a></li>
+            <li><a href="https://github.com/CTA-IFRS/Sistema-bibliotecario">Repositório do Projeto do CTA</a></li>
+            <li><a href="http://cta.ifrs.edu.br">Site do Centro Tecnológico de Acessibilidade do IFRS</a></li>
+        </ul>
     </div>
     <div class="col-md-7">
         <h3><?php echo L::titles_late_rents; ?></h3>

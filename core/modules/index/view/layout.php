@@ -1,4 +1,7 @@
-<?php if(!is_numeric(Session::getUID()) && isset($_GET['view']) || isset($_GET['action'])) header('Location: index.php');?>
+<?php
+if(!is_numeric(Session::getUID()) && isset($_GET['view']) || isset($_GET['action'])) header('Location: index.php');
+elseif(is_numeric(Session::getUID()) && !isset($_GET['view']) || !isset($_GET['action'])) header('Location: index.php?view=home');
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
