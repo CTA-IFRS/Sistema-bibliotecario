@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-	<h2><?php echo L::titles_add_user; ?></h2>
+	<h2><?php echo L::titles_new_user; ?></h2>
 	<div class="col-md-12">
         <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
     </div>
