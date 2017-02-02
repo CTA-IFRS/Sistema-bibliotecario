@@ -5,10 +5,10 @@
         <div class="col-md-12">
             <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
         </div>
-        <h2>Trocar Lingua</h2>
+        <h2><?php echo L::titles_change_lang; ?></h2>
         <form class="form-horizontal" id="changepasswd" method="post" action="index.php?action=changelang" role="form">
             <div class="form-group">
-                <label for="lang" class="col-lg-5 control-label">Línguas Disponíveis <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
+                <label for="lang" class="col-lg-5 control-label"><?php echo L::fields_available_langs; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
                 <div class="col-lg-7 select2-container">
                     <select name="lang" id="lang" class="form-control input-sm" required>
                         <option value="pt">Portugues</option>
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-4 col-lg-8">
-                    <button type="submit" class="btn btn-success ">Trocar Lingua</button>
+                    <button type="submit" class="btn btn-success "><?php echo L::buttons_change_lang; ?></button>
                 </div>
             </div>
         </form>
