@@ -37,13 +37,12 @@ elseif(is_numeric(Session::getUID()) && (!isset($_GET['view']) && !isset($_GET['
     <script src="js/jquery-1.10.2.js"></script>
     <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
     <?php endif; ?>
-    <script src='select2/select2.min.js'></script>
+    <script src='js/select2.min.js'></script>
 
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 
       <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
-      <script src="a11y-datatables.js"></script>
   </head>
 
   <body>
