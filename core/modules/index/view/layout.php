@@ -10,11 +10,11 @@ elseif(is_numeric(Session::getUID()) && (!isset($_GET['view']) && !isset($_GET['
     <title><?php echo L::titles_page_title; ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap3/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="vendor/select2/select2.css" rel="stylesheet">
-    <link href="vendor/select2/select2-bootstrap.css" rel="stylesheet">
+    <link href="css/select2.css" rel="stylesheet">
+    <link href="css/select2-bootstrap.css" rel="stylesheet">
 
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -36,19 +36,14 @@ elseif(is_numeric(Session::getUID()) && (!isset($_GET['view']) && !isset($_GET['
     </style>
     <script src="js/jquery-1.10.2.js"></script>
     <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
-    <link href='vendor/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
-    <link href='vendor/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-    <script src='vendor/js/moment-with-locales.js'></script>
-    <script src='vendor/fullcalendar/fullcalendar.min.js'></script>
-    <script src="vendor/fullcalendar/locale-all.js" charset="utf-8"></script>
     <?php endif; ?>
-    <script src='vendor/select2/select2.min.js'></script>
+    <script src='select2/select2.min.js'></script>
 
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 
       <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
       <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
-      <script src="vendor/a11y-datatables.js"></script>
+      <script src="a11y-datatables.js"></script>
   </head>
 
   <body>
@@ -154,7 +149,7 @@ if(Session::getUID()!=""){
 
     <!-- JavaScript -->
 
-<script src="vendor/bootstrap3/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
   <script>
           $('#datatable').DataTable({
               keys: true,
