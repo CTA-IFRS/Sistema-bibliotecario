@@ -11,6 +11,7 @@ class UserData {
 		$this->is_active = "1";
 		$this->is_admin = "0";
 		$this->created_at = "NOW()";
+		$this->lang = "pt";
 	}
 
 	public function add(){
@@ -30,7 +31,7 @@ class UserData {
 
 // partiendo de que ya tenemos creado un objecto UserData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",username=\"$this->username\",password=\"$this->password\",is_active=$this->is_active,is_admin=$this->is_admin where id=$this->id";
+		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",username=\"$this->username\",password=\"$this->password\",is_active=$this->is_active,is_admin=$this->is_admin,lang=\"$this->lang\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

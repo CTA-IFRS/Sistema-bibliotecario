@@ -140,7 +140,8 @@ CREATE TABLE `user` (
   `password` varchar(60) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_admin` tinyint(1) NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `lang` VARCHAR(3) NOT NULL DEFAULT 'pt'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

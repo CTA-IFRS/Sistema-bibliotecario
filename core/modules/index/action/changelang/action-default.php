@@ -2,7 +2,9 @@
 
 if (isset($_POST['lang']))
 {
-    setcookie('lang', $_POST['lang'], time()+60*60*24*30); // cookie lang expira em 30 dias
+    $user = UserData::getById(Session::getUID());
+    $user->lang = $_POST['lang'];
+    $user->update();
     $_SESSION['message'] = L::messages_lang_modified;
     $_SESSION['alert_type'] = 'success';
     header('Location: index.php?view=configuration');
