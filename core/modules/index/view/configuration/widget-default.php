@@ -11,7 +11,7 @@
                 <label for="lang" class="col-lg-5 control-label"><?php echo L::fields_available_langs; ?> <span class="mandatory"><?php echo L::fields_mandatory; ?></span></label>
                 <div class="col-lg-7 select2-container">
                     <select name="lang" id="lang" class="form-control input-sm" required>
-                        <option value="pt">Portugues</option>
+                        <option value="pt">Português</option>
                         <option value="en">English</option>
                         <option value="es">Español</option>
                     </select>
