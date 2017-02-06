@@ -160,7 +160,7 @@ ALTER TABLE `user`
 --
 -- Extraindo dados da tabela `user`
 --
-INSERT INTO user (name,lastname,username,email,password,is_active,is_admin,created_at) value ("Administrador","do Sistema","admin","your@email.com",sha1(md5("admin")),1,1,NOW());
+INSERT INTO user (name,lastname,username,email,password,is_active,is_admin,created_at) value (1,"Administrador","do Sistema","admin","your@email.com",sha1(md5("admin")),1,1,NOW());
 
 
 --
