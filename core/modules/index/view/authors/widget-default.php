@@ -13,10 +13,10 @@
 			?>
 
 			<table id="datatable" class="table  table-hover">
-			<thead>
-			<th><?php echo L::fields_name; ?></th>
-			<th><?php echo L::fields_operations; ?></th>
-			</thead>
+			<thead><tr>
+<th><?php echo L::fields_name; ?></th>
+			<th id="ops"><?php echo L::fields_operations; ?></tr></th>
+</thead>
 			<?php
 			foreach($users as $user){
 				?>

@@ -77,11 +77,11 @@ $total = 0;
 
 </form>
  <table id="datatable" class="table  table-hover">
-<thead>
-	<th style="width:40px;"><?php echo L::fields_code; ?></th>
+<thead><tr>
+<th> style="width:40px;"><?php echo L::fields_code; ?></th>
 	<th style="width:40px;"><?php echo L::fields_copie; ?></th>
 	<th><?php echo L::fields_book; ?></th>
-	<th><?php echo L::fields_operations ?></th>
+	<th><?php echo L::fields_operations ?></tr></th>
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
 $book = BookData::getById($p["book_id"]);
@@ -92,9 +92,7 @@ $item = ItemData::getById($p["item_id"]);
 	<td><?php echo $book->isbn; ?></td>
 	<td ><?php echo $item->code; ?></td>
 	<td ><?php echo $book->title; ?></td>
-	<td style="width:30px;">
-	<a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?></a>
-	</td>
+	<td id="ops" style="width:30px;"><a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?></a></td>
 </tr>
 
 <?php endforeach; ?>

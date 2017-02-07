@@ -1,0 +1,13 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    display:block;
+}
+
+th, td {
+    padding: 1em;
+}

@@ -10,13 +10,13 @@
 			// si hay usuarios
 			?>
 			 <table id="datatable" class="table  table-hover">
-			<thead>
-			<th><?php echo L::fields_full_name; ?></th>
+			<thead><tr>
+<th><?php echo L::fields_full_name; ?></th>
 			<th><?php echo L::fields_username; ?></th>
 			<th><?php echo L::fields_status; ?></th>
 			<th><?php echo L::fields_user; ?></th>
-			<th><?php echo L::fields_operations; ?></th>
-			</thead>
+			<th id="ops"><?php echo L::fields_operations; ?></tr></th>
+</thead>
 			<?php
 			foreach($users as $user){
 				?>
@@ -35,9 +35,7 @@
 					else echo L::fields_common;
 					?>
 				</td>
-				<td style="width:30px;">
-					<a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-primary"><?php echo L::buttons_edit; ?></a>
-				</td>
+				<td id="ops" style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-primary"><?php echo L::buttons_edit; ?></a></td>
 				</tr>
 				<?php
 

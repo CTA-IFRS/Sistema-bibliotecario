@@ -22,13 +22,13 @@
 			?>
 
 			 <table id="datatable" class="table  table-hover">
-			<thead>
-			<th><?php echo L::fields_full_name; ?></th>
+			<thead><tr>
+<th><?php echo L::fields_full_name; ?></th>
 			<th><?php echo L::fields_address; ?></th>
 			<th><?php echo L::fields_email; ?></th>
 			<th><?php echo L::fields_phone; ?></th>
-			<th><?php echo L::fields_operations; ?></th>
-			</thead>
+			<th id="ops"><?php echo L::fields_operations; ?></tr></th>
+</thead>
 			<?php
 			foreach($users as $user){
 				?>
@@ -37,11 +37,7 @@
 				<td><?php echo $user->address; ?></td>
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
-				<td style="width:200px;">
-				<a href="index.php?view=clienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a>
-				<a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a>
-				<a href="index.php?action=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a>
-				</td>
+				<td id="ops" style="width:200px;"><a href="index.php?view=clienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a> <a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a> <a href="index.php?action=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
 				</tr>
 				<?php
 

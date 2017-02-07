@@ -31,16 +31,17 @@ if(isset($_GET['start_at']) && $_GET['start_at']!="" && isset($_GET['finish_at']
 			$_SESSION["report_data"] = $users;
 			?>
 			<div class="panel panel-default">
+            <?php ob_start(); ?>
 			<div class="panel-heading">
 				<h2 style="font-size: 1em; padding:0; margin:0.1em"><?php echo L::fields_reports; ?></h2>
 			</div>
 			 <table id="datatable" class="table  table-hover">
-			<thead>
-			<th><?php echo L::fields_copie; ?></th>
+			<thead><tr>
+<th><?php echo L::fields_copie; ?></th>
 			<th><?php echo L::fields_book; ?></th>
 			<th><?php echo L::fields_client; ?></th>
-			<th><?php echo L::fields_date; ?></th>
-			</thead>
+			<th><?php echo L::fields_date; ?></tr></th>
+</thead>
 			<?php
 			$total = 0;
 			foreach($users as $user){
@@ -56,9 +57,16 @@ if(isset($_GET['start_at']) && $_GET['start_at']!="" && isset($_GET['finish_at']
 				</tr>
 				<?php
 
-			}
-			echo "</table>";
-			?>
+			}?>
+			</table>
+                 <?php
+                 $content = ob_get_contents();
+                 ob_end_flush();
+                 ?>
+                 <form action="index.php?action=pdfreports" method="post">
+                     <textarea name="table" id="contenttable" cols="30" rows="10" style="display: none !important;"><?php echo $content; ?></textarea>
+                     <button type="submit" class="btn btn-primary" id="pdfgen">Criar PDF</button>
+                 </form>
 			<?php
 		}else{
 			echo "<p class='alert alert-danger'>" . L::messages_no_data . "</p>";

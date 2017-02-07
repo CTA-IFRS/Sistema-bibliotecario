@@ -36,6 +36,7 @@ $rents = OperationData::getRents();
         </ul>
     </div>
     <div class="col-md-7">
+        <?php ob_start(); ?>
         <h3><?php echo L::titles_late_rents; ?></h3>
         <?php
         foreach ($rents as $rent)
@@ -76,6 +77,14 @@ $rents = OperationData::getRents();
             endforeach;
             ?>
         </table>
+        <?php
+        $content = ob_get_contents();
+        ob_end_flush();
+        ?>
+        <form action="index.php?action=pdfreports" method="post">
+            <textarea name="table" id="contenttable" cols="30" rows="10" style="display: none !important;"><?php echo $content; ?></textarea>
+            <button type="submit" class="btn btn-primary" id="pdfgen">Criar PDF</button>
+        </form>
         <?php
         else: echo '<p class="alert alert-info">' . L::messages_no_late_rents . '</p>';
         endif;

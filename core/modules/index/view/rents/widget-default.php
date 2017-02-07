@@ -36,15 +36,17 @@ $products = OperationData::getRents();
 if(count($products)>0){
 ?>
 <br>
+    <?php ob_start(); ?>
+    <h2 class="hidden"><i class='fa fa-th-large'></i> <?php echo L::titles_loans; ?></h2>
  <table id="datatable" class="table  table-hover	">
-	<thead>
-		<th><?php echo L::fields_copie; ?></th>
+	<thead><tr>
+<th><?php echo L::fields_copie; ?></th>
 		<th><?php echo L::fields_book; ?></th>
 		<th><?php echo L::fields_client; ?></th>
 		<th><?php echo L::fields_start; ?></th>
 		<th><?php echo L::fields_end; ?></th>
-		<th><?php echo L::fields_operations; ?></th>
-	</thead>
+		<th id="ops"><?php echo L::fields_operations; ?></tr></th>
+</thead>
 	<?php foreach($products as $sell):
 $item = $sell->getItem();
 $book = $item->getBook();
@@ -71,7 +73,14 @@ $client = $sell->getClient();
 	</tr>
 <?php endforeach; ?>
 </table>
-
+    <?php
+    $content = ob_get_contents();
+    ob_end_flush();
+    ?>
+    <form action="index.php?action=pdfreports" method="post">
+        <textarea name="table" id="contenttable" cols="30" rows="10" style="display: none !important;"><?php echo $content; ?></textarea>
+        <button type="submit" class="btn btn-primary" id="pdfgen">Criar PDF</button>
+    </form>
 <div class="clearfix"></div>
 
 	<?php

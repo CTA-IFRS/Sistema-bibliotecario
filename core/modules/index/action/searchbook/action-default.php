@@ -6,11 +6,11 @@ if(count($products)>0){
 	?>
 <h2><?php echo L::titles_search_result; ?></h2>
 <table id="datatable" class="table table-hover">
-	<thead>
-		<th><?php echo L::fields_isbn; ?></th>
+	<thead><tr>
+<th><?php echo L::fields_isbn; ?></th>
 		<th><?php echo L::fields_book; ?></th>
-		<th><?php echo L::fields_quantity; ?></th>
-	</thead>
+		<th><?php echo L::fields_quantity; ?></tr></th>
+</thead>
 	<?php
 $products_in_cero=0;
 	 foreach($products as $product):
