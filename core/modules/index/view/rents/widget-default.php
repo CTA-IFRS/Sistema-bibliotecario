@@ -64,12 +64,7 @@ $client = $sell->getClient();
 		</td>
 		<td><?php echo $sell->start_at; ?></td>
 		<td><?php echo $sell->finish_at; ?></td>
-		<td style="text-align: right">
-			<?php if($sell->returned_at==""):?>
-			<a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-success"><?php echo L::buttons_finish; ?></a>
-			<?php endif;?>
-			<a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-danger">Excluir</a>
-		</td>
+		<td id="ops" style="text-align: right"><?php if($sell->returned_at==""):?> <a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-success"><?php echo L::buttons_finish; ?></a><?php endif;?> <a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-danger">Excluir</a></td>
 	</tr>
 <?php endforeach; ?>
 </table>
@@ -77,7 +72,7 @@ $client = $sell->getClient();
     $content = ob_get_contents();
     ob_end_flush();
     ?>
-    <form action="index.php?action=pdfreports" method="post">
+    <form target="_blank" action="index.php?action=pdfreports" method="post">
         <textarea name="table" id="contenttable" cols="30" rows="10" style="display: none !important;"><?php echo $content; ?></textarea>
         <button type="submit" class="btn btn-primary" id="pdfgen">Criar PDF</button>
     </form>

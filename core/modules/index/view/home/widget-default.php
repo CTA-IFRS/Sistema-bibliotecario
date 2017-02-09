@@ -81,7 +81,7 @@ $rents = OperationData::getRents();
         $content = ob_get_contents();
         ob_end_flush();
         ?>
-        <form action="index.php?action=pdfreports" method="post">
+        <form target="_blank" action="index.php?action=pdfreports" method="post">
             <textarea name="table" id="contenttable" cols="30" rows="10" style="display: none !important;"><?php echo $content; ?></textarea>
             <button type="submit" class="btn btn-primary" id="pdfgen">Criar PDF</button>
         </form>
