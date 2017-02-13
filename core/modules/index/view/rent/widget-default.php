@@ -71,7 +71,7 @@ $total = 0;
     </div>
     <div class="col-lg-1">
     <label class="control-label"><br></label>
-    <a href="./?action=clearcart" class="btn btn-danger btn-block"><?php echo L::buttons_delete; ?></a>
+    <a href="index.php?action=clearcart" class="btn btn-danger btn-block"><?php echo L::buttons_delete; ?></a>
     </div>
   </div>
 
@@ -92,7 +92,7 @@ $item = ItemData::getById($p["item_id"]);
 	<td><?php echo $book->isbn; ?></td>
 	<td ><?php echo $item->code; ?></td>
 	<td ><?php echo $book->title; ?></td>
-	<td id="ops" style="width:30px;"><a href="index.php?action=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?><span class="sr-only"><?php echo ' ' . L::navbar_loan . ' do ' . L::fields_book . ' ' . $book->title; ?></span></a></td>
+	<td id="ops" style="width:30px;"><a href="index.php?action=clearcart&product_id=<?php echo $item->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?><span class="sr-only"><?php echo ' ' . L::navbar_loan . ' do ' . L::fields_book . ' ' . $book->title; ?></span></a></td>
 </tr>
 
 <?php endforeach; ?>
