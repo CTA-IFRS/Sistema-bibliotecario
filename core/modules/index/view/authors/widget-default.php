@@ -22,7 +22,7 @@
 				?>
 				<tr>
 				<td><?php echo $user->name." ".$user->lastname; ?></td>
-				<td style="width:130px;"><a href="index.php?view=editauthor&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a> <a href="index.php?action=delauthor&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
+				<td style="width:130px;"><a href="index.php?view=editauthor&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?><span class="sr-only"><?php echo ' ' . L::fields_author . ' ' . $user->name." ".$user->lastname; ?></span></a> <a href="index.php?action=delauthor&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?><span class="sr-only"><?php echo ' ' . L::fields_author . ' ' . $user->name." ".$user->lastname; ?></span></a></td>
 				</tr>
 				<?php
 

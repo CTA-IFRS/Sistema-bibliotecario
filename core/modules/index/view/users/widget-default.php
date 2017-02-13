@@ -35,7 +35,7 @@
 					else echo L::fields_common;
 					?>
 				</td>
-				<td id="ops" style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-primary"><?php echo L::buttons_edit; ?></a></td>
+				<td id="ops" style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-primary"><?php echo L::buttons_edit; ?><span class="sr-only"><?php echo ' ' . L::fields_user . ' ' . $user->name." ".$user->lastname; ?></span></a></td>
 				</tr>
 				<?php
 

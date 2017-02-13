@@ -37,7 +37,7 @@
 				<td><?php echo $user->address; ?></td>
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
-				<td id="ops" style="width:200px;"><a href="index.php?view=clienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a> <a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a> <a href="index.php?action=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
+				<td id="ops" style="width:200px;"><a href="index.php?view=clienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?><span class="sr-only"><?php echo ' ' . L::fields_client . ' ' . $user->name." ".$user->lastname; ?></span></a> <a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?><span class="sr-only"><?php echo ' ' . L::fields_client . ' ' . $user->name." ".$user->lastname; ?></span></a> <a href="index.php?action=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?><span class="sr-only"><?php echo ' ' . L::fields_client . ' ' . $user->name." ".$user->lastname; ?></span></a></td>
 				</tr>
 				<?php
 

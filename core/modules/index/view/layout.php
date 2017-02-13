@@ -28,11 +28,6 @@ elseif(is_numeric(Session::getUID()) && (!isset($_GET['view']) && !isset($_GET['
             width: 10px;
             height: 10px;
         }
-
-        .only-sr {
-            position: absolute;
-            left: -999em;
-        }
     </style>
     <script src="js/jquery-1.10.2.js"></script>
     <?php if(isset($_GET["view"]) && $_GET["view"]=="home"):?>
@@ -46,8 +41,8 @@ elseif(is_numeric(Session::getUID()) && (!isset($_GET['view']) && !isset($_GET['
   </head>
 
   <body>
-  <a href="#page-wrapper" class="only-sr" accesskey="1">Pular para o Conteúdo</a>
-  <a href="#navegacao" class="only-sr" accesskey="2">Pular para o Menu de Navegaçao</a>
+  <a href="#page-wrapper" class="sr-only" accesskey="1">Pular para o Conteúdo</a>
+  <a href="#navegacao" class="sr-only" accesskey="2">Pular para o Menu de Navegaçao</a>
     <div id="wrapper">
 
       <!-- Sidebar -->

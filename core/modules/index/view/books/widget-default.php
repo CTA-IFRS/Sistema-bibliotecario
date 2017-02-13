@@ -33,7 +33,7 @@ $books = BookData::getAll();
 				<td><?php echo ItemData::countByBookId($user->id)->c; ?></td>
 				<td><?php echo ItemData::countAvaiableByBookId($user->id)->c; ?></td>
 				<td><?php if($category!=null){ echo $category->name; }  ?></td>
-                <td id="ops" style="width:210px;"><a href="index.php?view=items&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_copies; ?></a> <a href="index.php?view=editbook&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?></a> <a href="index.php?action=delbook&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
+                <td id="ops" style="width:210px;"><a href="index.php?view=items&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_copies; ?><span class="sr-only"><?php echo ' do ' . L::fields_book . ' ' . $user->title; ?></span></a> <a href="index.php?view=editbook&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?><span class="sr-only"><?php echo ' ' . L::fields_book . ' ' . $user->title; ?></span></a> <a href="index.php?action=delbook&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?><span class="sr-only"><?php echo ' ' . L::fields_book . ' ' . $user->title; ?></span></a></td>
 				</tr>
 				<?php
 

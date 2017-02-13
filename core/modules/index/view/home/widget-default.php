@@ -4,8 +4,8 @@ $rents = OperationData::getRents();
 <div class="row">
     <div class="col-md-12">
         <h2><?php echo L::titles_homepage; ?></h2>
-        <a href="#laterents" class="only-sr">Pular para Tabela de Empréstimos Atrasados</a>
-        <a href="#explain" class="only-sr">Pular para Explicação do Sistema</a>
+        <a href="#laterents" class="sr-only">Pular para Tabela de Empréstimos Atrasados</a>
+        <a href="#explain" class="sr-only">Pular para Explicação do Sistema</a>
         <hr>
     </div>
     <div class="col-md-5">

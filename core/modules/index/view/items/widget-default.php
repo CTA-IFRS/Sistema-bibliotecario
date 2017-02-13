@@ -44,8 +44,7 @@ else
 				}
 				?></td>
 				<td><?php echo ($user->patrimonio == null) ? L::fields_no_patrimony : $user->patrimonio; ?></td>
-				<!-- TODO: fazer isso ai em cima -->
-				<td id="ops" style="width:200px;"><a href="index.php?view=itemhistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?></a> <a href="index.php?view=edititem&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?action=delitem&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?></a></td>
+				<td id="ops" style="width:200px;"><a href="index.php?view=itemhistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><?php echo L::buttons_historic; ?><span class="sr-only"><?php echo ' do ' . L::fields_copie . ' ' . $user->code; ?></span></a> <a href="index.php?view=edititem&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs"><?php echo L::buttons_edit; ?><span class="sr-only"><?php echo ' ' . L::fields_copie . ' ' . $user->code; ?></span></a> <a href="index.php?action=delitem&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs"><?php echo L::buttons_delete; ?><span class="sr-only"><?php echo ' ' . L::fields_copie . ' ' . $user->code; ?></span></a></td>
 				</tr>
 				<?php
 

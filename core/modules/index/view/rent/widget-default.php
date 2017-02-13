@@ -78,7 +78,7 @@ $total = 0;
 </form>
  <table id="datatable" class="table  table-hover">
 <thead><tr>
-<th> style="width:40px;"><?php echo L::fields_code; ?></th>
+<th style="width:40px;"><?php echo L::fields_code; ?></th>
 	<th style="width:40px;"><?php echo L::fields_copie; ?></th>
 	<th><?php echo L::fields_book; ?></th>
 	<th><?php echo L::fields_operations ?></tr></th>
@@ -92,7 +92,7 @@ $item = ItemData::getById($p["item_id"]);
 	<td><?php echo $book->isbn; ?></td>
 	<td ><?php echo $item->code; ?></td>
 	<td ><?php echo $book->title; ?></td>
-	<td id="ops" style="width:30px;"><a href="index.php?view=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?></a></td>
+	<td id="ops" style="width:30px;"><a href="index.php?action=clearcart&product_id=<?php echo $book->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> <?php echo L::buttons_cancel; ?><span class="sr-only"><?php echo ' ' . L::navbar_loan . ' do ' . L::fields_book . ' ' . $book->title; ?></span></a></td>
 </tr>
 
 <?php endforeach; ?>
