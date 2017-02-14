@@ -145,7 +145,7 @@ if(Session::getUID()!=""){
 
 <script src="js/bootstrap.min.js"></script>
   <script>
-          $('#datatable').DataTable({
+          var table = $('#datatable').DataTable({
               keys: true,
               language : {
                   emptyTable: "<?php echo L::datatables_sEmptyTable; ?>",
@@ -184,6 +184,14 @@ if(Session::getUID()!=""){
           $('.active').find('a:first').each(function () {
               $(this).attr('aria-selected', 'true');
           });
+
+          function searchDatatable(){
+              table.search($("#txtSearch").val()).draw();
+              return false;
+          }
+          $('#datatable_filter').find('label:first').remove();
+          $('#datatable_filter').append('<form onsubmit="return searchDatatable()"><label for="txtSearch">Pesquisar</label> <input type="text" id="txtSearch" class="form-control"> <button  type="button" id="filter" class="btn btn-primary">OK</button></form>');
+
   </script>
 </body>
 </html>
