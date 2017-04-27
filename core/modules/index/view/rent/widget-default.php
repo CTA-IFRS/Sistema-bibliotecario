@@ -78,8 +78,8 @@ $total = 0;
 </form>
  <table id="datatable" class="table  table-hover">
 <thead><tr>
-<th style="width:40px;"><?php echo L::fields_code; ?></th>
-	<th style="width:40px;"><?php echo L::fields_copie; ?></th>
+<th><?php echo L::fields_code; ?></th>
+	<th><?php echo L::fields_copie; ?></th>
 	<th><?php echo L::fields_book; ?></th>
 	<th><?php echo L::fields_operations ?></tr></th>
 </thead>
