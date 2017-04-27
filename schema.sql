@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL,
-  'lang' varchar(3) NOT NULL DEFAULT 'pt',
+  `lang` varchar(3) NOT NULL DEFAULT 'pt',
   PRIMARY KEY (`id`)
 );
 
@@ -161,7 +161,7 @@ ALTER TABLE `user`
 --
 -- Extraindo dados da tabela `user`
 --
-INSERT INTO user (name,lastname,username,email,password,is_active,is_admin,created_at) value (1,"Administrador","do Sistema","admin","your@email.com",sha1(md5("admin")),1,1,NOW());
+INSERT INTO `user` (name,lastname,username,email,password,is_active,is_admin,created_at) value ("Administrador","do Sistema","admin","your@email.com",sha1(md5("admin")),1,1,NOW());
 
 
 --
