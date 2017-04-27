@@ -4,11 +4,24 @@ class Dates {
     static public function convertDateTypesToDB($date){
         if ($date == "NOW()") return $date;
 
-		$date = DateTime::createFromFormat('d/m/Y', $date);
+		if (DateTime::createFromFormat('d/m/Y', $date) !== false)
+        {
+            $date = DateTime::createFromFormat('d/m/Y', $date);
 
-		$date = $date->format('m/d/Y');
+            $date = $date->format('m/d/Y');
 
-		return date('Y-m-d', strtotime($date));
+            return date('Y-m-d', strtotime($date));
+        }
+        elseif (DateTime::createFromFormat('m/d/Y', $date) !== false)
+        {
+            $date = DateTime::createFromFormat('m/d/Y', $date);
+
+            return date('Y-m-d', strtotime($date));
+        }
+        elseif (DateTime::createFromFormat('Y-m-d', $date) !== false)
+        {
+            return date('Y-m-d', strtotime($date));
+        }
 	}
 
 	static public function convertDataTypesToView($objects){
