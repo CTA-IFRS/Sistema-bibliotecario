@@ -4,7 +4,7 @@
 	<div class="col-md-12">
         <p class="alert alert-info"><span class="mandatory"><?php echo L::fields_mandatory; ?></span> <?php echo L::messages_mandatory_fields; ?></p>
     </div>
-		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=adduser" role="form">
+		<form class="form-horizontal" method="post" id="addproduct" action="index.php?action=adduser" role="form">
 
 
   <div class="form-group">
