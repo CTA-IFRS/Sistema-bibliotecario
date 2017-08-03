@@ -1,3 +1,8 @@
+<?php
+$u=null;
+if(Session::getUID()!="")
+    $u = UserData::getById(Session::getUID());
+?>
 <div class="row">
 	<div class="col-md-12">
 	<a href="index.php?view=newuser" class="btn btn-default pull-right"><i class='glyphicon glyphicon-user'></i> <?php echo L::buttons_new_user; ?></a>
@@ -42,12 +47,15 @@
 							<?php echo ' ' . L::fields_user . ' ' . $user->name." ".$user->lastname; ?>
 						</span>
 					</a>
-					<a href="index.php?action=deluser&id=<?php echo $user->id;?>" class="btn btn-danger">
-						<?php echo L::buttons_delete; ?>
-						<span class="sr-only">
-							<?php echo ' ' . L::fields_user . ' ' . $user->name." ".$user->lastname; ?>
-						</span>
-					</a>
+					<?php if ($u->is_admin): ?>
+						<a href="index.php?action=deluser&id=<?php echo $user->id;?>" class="btn btn-danger">
+							<?php echo L::buttons_delete; ?>
+							<span class="sr-only">
+								<?php echo ' ' . L::fields_user . ' ' . $user->name." ".$user->lastname; ?>
+							</span>
+						</a>
+					<?php endif; ?>
+
 				</td>
 				</tr>
 				<?php
