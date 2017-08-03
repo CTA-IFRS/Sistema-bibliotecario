@@ -40,7 +40,9 @@ class OperationData {
 
 // partiendo de que ya tenemos creado un objecto OperationData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\" where id=$this->id";
+		$this->convertDateTypesToDB();
+		echo $this->start_at;
+		$sql = "update ".self::$tablename." set client_id=\"$this->client_id\", start_at=\"$this->start_at\", finish_at=\"$this->finish_at\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

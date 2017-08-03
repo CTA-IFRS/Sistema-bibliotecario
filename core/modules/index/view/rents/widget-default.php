@@ -64,7 +64,26 @@ $client = $sell->getClient();
 		</td>
 		<td><?php echo $sell->start_at; ?></td>
 		<td><?php echo $sell->finish_at; ?></td>
-		<td id="ops" style="text-align: right"><?php if($sell->returned_at==""):?> <a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-success"><?php echo L::buttons_finish; ?><span class="sr-only"><?php echo ' ' . L::titles_loan . ' do ' . L::fields_client . ' ' . $client->name." ".$client->lastname . ' do ' . L::fields_book . ' ' . $book->title; ?></span></a><?php endif;?> <a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-danger"><?php L::buttons_delete; ?><span class="sr-only"><?php echo ' ' . L::titles_loan . ' do ' . L::fields_client . ' ' . $client->name." ".$client->lastname . ' do ' . L::fields_book . ' ' . $book->title; ?></span></a></td>
+		<td id="ops" style="text-align: right">
+			<?php if($sell->returned_at==""):?>
+				<a href="index.php?action=finalize&id=<?php echo $sell->id; ?>" class="btn btn-success">
+					<?php echo L::buttons_finish; ?>
+					<span class="sr-only">
+						<?php echo ' ' . L::titles_loan . ' do ' . L::fields_client . ' ' . $client->name." ".$client->lastname . ' do ' . L::fields_book . ' ' . $book->title; ?>
+					</span>
+				</a>
+			<?php endif;?>
+			<a href="index.php?view=editrent&id=<?php echo $sell->id; ?>" class="btn btn-primary">
+				<?php echo L::buttons_edit; ?>
+				<span class="sr-only"><?php echo ' ' . L::titles_loan . ' do ' . L::fields_client . ' ' . $client->name." ".$client->lastname . ' do ' . L::fields_book . ' ' . $book->title; ?>
+				</span>
+			</a>
+			<a href="index.php?action=deloperation&id=<?php echo $sell->id; ?>" class="btn btn-danger">
+				<?php echo L::buttons_delete; ?>
+				<span class="sr-only"><?php echo ' ' . L::titles_loan . ' do ' . L::fields_client . ' ' . $client->name." ".$client->lastname . ' do ' . L::fields_book . ' ' . $book->title; ?>
+				</span>
+			</a>
+		</td>
 	</tr>
 <?php endforeach; ?>
 </table>

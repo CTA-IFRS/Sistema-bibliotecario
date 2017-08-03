@@ -31,8 +31,8 @@ if( $go && isset($_SESSION["cart"])){
             $_SESSION['alert_type'] = 'success';
 		}
 ////////////////////
-		}
 	}
+}
 if($go){
 	ob_clean();
 	header('Location: index.php?view=rents');
